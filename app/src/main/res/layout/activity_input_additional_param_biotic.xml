@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.main.inputdata.inputaddparam.InputAdditionalParamBioticActivity">
+
+    <include
+        android:id="@+id/input_additional_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_input_add_biotic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    style="@style/Text.Bold"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/biotic"
+                    android:textColor="@color/royal_blue"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_similarity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/similarity"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_similarity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_dominance"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/dominance"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_dominance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_diversity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/diversity"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_diversity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_sum_abundance"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/sum_abundance"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_sum_abundance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_sum_species"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/sum_species"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_sum_species"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_indicator_taxa"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/indicator_taxa"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_indicator_taxa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_input_add_back"
+                        style="@style/Button.Action"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/silver"
+                        android:text="@string/back" />
+
+                    <Button
+                        android:id="@+id/btn_input_add_next"
+                        style="@style/Button.Action"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/caribbean_green"
+                        android:text="@string/next" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/loading_input_add_biotic"
+                layout="@layout/view_loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_input_index_biotic_error"
+                style="@style/Text.Regular"
+                android:layout_gravity="center"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

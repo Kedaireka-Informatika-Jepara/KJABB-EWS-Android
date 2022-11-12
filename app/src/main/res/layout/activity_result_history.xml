@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.main.inputhistory.result.ResultHistoryActivity">
+
+    <include
+        android:id="@+id/toolbar_detail_station"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_result_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/view_detail_result_history"
+                    layout="@layout/view_result" />
+
+                <Button
+                    android:id="@+id/btn_edit_detail_result_history"
+                    style="@style/Button.Action"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/caribbean_green"
+                    android:text="@string/edit" />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/loading_result_history"
+                layout="@layout/view_loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_result_history_error"
+                style="@style/Text.Regular"
+                android:layout_gravity="center"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

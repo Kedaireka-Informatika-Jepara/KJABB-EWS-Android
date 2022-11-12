@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.admin.datauser.action.UserActionActivity">
+
+    <include
+        android:id="@+id/action_user_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.SemiBold"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/info_detail_user"
+                        android:textSize="16sp" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:layout_marginEnd="70dp"
+                                android:text="@string/name" />
+
+                            <TextView
+                                android:id="@+id/tv_user_name"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/name" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/email" />
+
+                            <TextView
+                                android:id="@+id/tv_user_email"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/email" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/id" />
+
+                            <TextView
+                                android:id="@+id/tv_user_id"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/id" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/role" />
+
+                            <TextView
+                                android:id="@+id/tv_user_role"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/role" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/membership" />
+
+                            <TextView
+                                android:id="@+id/tv_user_membership"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/membership" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/status" />
+
+                            <TextView
+                                android:id="@+id/tv_user_status"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/status" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_user_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_user_info">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.SemiBold"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/action"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_user_activate"
+                        style="@style/Button.Action"
+                        android:backgroundTint="@color/ripe_mango"
+                        android:text="@string/deactivate" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/btn_user_delete"
+                            style="@style/Button.Action"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/orange_soda"
+                            android:text="@string/delete" />
+
+                        <Button
+                            android:id="@+id/btn_user_edit"
+                            style="@style/Button.Action"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/silver"
+                            android:text="@string/edit" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/loading_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationZ="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_user_error"
+                style="@style/Text.Regular"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

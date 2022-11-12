@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.menu.main.inputhistory.InputHistoryFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label_result_history"
+                style="@style/Text.Bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/result_history"
+                android:textColor="@color/royal_blue"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_history_data_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_station" />
+
+            <TextView
+                android:id="@+id/tv_label_taxa_indicator"
+                style="@style/Text.Bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/label_taxa_indicator"
+                android:textColor="@color/royal_blue"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_history_taxa_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_taxa_indicator" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_no_result_input"
+            style="@style/Text.Regular"
+            android:layout_gravity="center"
+            android:text="@string/no_results"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:drawableTopCompat="@drawable/ic_no_result" />
+
+        <ProgressBar
+            android:id="@+id/loading_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_history_error"
+            style="@style/Text.Regular"
+            android:layout_gravity="center"
+            android:text="@string/something_went_wrong"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:drawableTopCompat="@drawable/ic_error" />
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

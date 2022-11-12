@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.main.inputdata.inputmainparam.AddMainParamBioticActivity">
+
+    <include
+        android:id="@+id/add_main_biotic_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout_input_add_index"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="32dp"
+            android:paddingTop="16dp"
+            android:paddingRight="32dp"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_input_main_species"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/species"
+                app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_input_main_species"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_input_main_family"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_input_main_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/family"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_input_main_abundance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/abundance"
+                app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_input_main_abundance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btn_input_main_cancel"
+                    style="@style/Button.Action"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="0.5"
+                    android:backgroundTint="@color/silver"
+                    android:text="@string/cancel" />
+
+                <Button
+                    android:id="@+id/btn_input_main_add"
+                    style="@style/Button.Action"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="0.5"
+                    android:backgroundTint="@color/caribbean_green"
+                    android:text="@string/add" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/loading_add_index"
+            layout="@layout/view_loading"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_add_index_error"
+            style="@style/Text.Regular"
+            android:layout_gravity="center"
+            android:text="@string/something_went_wrong"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:drawableTopCompat="@drawable/ic_error" />
+
+    </FrameLayout>
+
+</LinearLayout>
+

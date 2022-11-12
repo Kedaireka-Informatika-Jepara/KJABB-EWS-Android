@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.main.inputdata.inputaddparam.InputAdditionalParamAbioticActivity">
+
+    <include
+        android:id="@+id/input_additional_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_input_add_abiotic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="32dp"
+                android:paddingTop="16dp"
+                android:paddingRight="32dp"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    style="@style/Text.Bold"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/abiotic"
+                    android:textColor="@color/royal_blue"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_conductivity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/conductivity"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_conductivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_ratio"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/ratio"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_ratio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_turbidity"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/turbidity"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_turbidity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_sand"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/sand"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_sand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_clay"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/clay"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_clay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_input_add_silt"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/silt"
+                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_input_add_silt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_input_add_back"
+                        style="@style/Button.Action"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/silver"
+                        android:text="@string/back" />
+
+                    <Button
+                        android:id="@+id/btn_input_add_count"
+                        style="@style/Button.Action"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="0.5"
+                        android:backgroundTint="@color/caribbean_green"
+                        android:text="@string/count" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/loading_input_add_abiotic"
+                layout="@layout/view_loading"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_input_add_abiotic_error"
+                style="@style/Text.Regular"
+                android:layout_gravity="center"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

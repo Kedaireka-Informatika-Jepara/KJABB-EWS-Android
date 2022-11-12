@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.profile.ProfileActivity">
+
+    <include
+        android:id="@+id/action_profile_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profile"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_default_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="32dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_profile">
+
+                <TextView
+                    style="@style/Text.Regular.UserLabel"
+                    android:layout_marginEnd="70dp"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/tv_profile_name"
+                    style="@style/Text.SemiBold.UserValue"
+                    android:textSize="18sp"
+                    tools:text="@string/name" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/Text.Regular.UserLabel"
+                    android:text="@string/email" />
+
+                <TextView
+                    android:id="@+id/tv_profile_email"
+                    style="@style/Text.SemiBold.UserValue"
+                    android:textSize="18sp"
+                    tools:text="@string/email" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/Text.Regular.UserLabel"
+                    android:text="@string/role" />
+
+                <TextView
+                    android:id="@+id/tv_profile_role"
+                    style="@style/Text.SemiBold.UserValue"
+                    android:textSize="18sp"
+                    tools:text="@string/role" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/gray" />
+
+                <TextView
+                    style="@style/Text.Regular.UserLabel"
+                    android:text="@string/membership" />
+
+                <TextView
+                    android:id="@+id/tv_profile_membership"
+                    style="@style/Text.SemiBold.UserValue"
+                    android:textSize="18sp"
+                    tools:text="@string/membership" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_action_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_profile">
+
+                <Button
+                    android:id="@+id/btn_edit_profile"
+                    style="@style/Button.Action"
+                    android:text="@string/edit_profile" />
+
+                <Button
+                    android:id="@+id/btn_change_password"
+                    style="@style/Button.Action"
+                    android:text="@string/change_password" />
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/loading_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationZ="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_profile_error"
+                style="@style/Text.Regular"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

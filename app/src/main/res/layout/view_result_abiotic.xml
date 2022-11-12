@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/clay" />
+
+            <TextView
+                android:id="@+id/tv_result_clay"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/conductivity" />
+
+            <TextView
+                android:id="@+id/tv_result_conductivity"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/do_mg_l" />
+
+            <TextView
+                android:id="@+id/tv_result_do"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/diversity" />
+
+            <TextView
+                android:id="@+id/tv_result_diversity"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/dominance" />
+
+            <TextView
+                android:id="@+id/tv_result_dominance"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/sum_species" />
+
+            <TextView
+                android:id="@+id/tv_result_num_species"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/ph" />
+
+            <TextView
+                android:id="@+id/tv_result_ph"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/ratio" />
+
+            <TextView
+                android:id="@+id/tv_result_ratio"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/salinity" />
+
+            <TextView
+                android:id="@+id/tv_result_salinity"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/sand" />
+
+            <TextView
+                android:id="@+id/tv_result_sand"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/silt" />
+
+            <TextView
+                android:id="@+id/tv_result_silt"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/similarity" />
+
+            <TextView
+                android:id="@+id/tv_result_similarity"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/temperature" />
+
+            <TextView
+                android:id="@+id/tv_result_temperature"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/sum_abundance" />
+
+            <TextView
+                android:id="@+id/tv_result_abundance"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/turbidity" />
+
+            <TextView
+                android:id="@+id/tv_result_turbidity"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Regular.UserLabel"
+                android:layout_marginTop="10dp"
+                android:text="@string/indicator_taxa" />
+
+            <TextView
+                android:id="@+id/tv_result_indicator_taxa"
+                style="@style/Text.SemiBold.UserValue"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="30sp"
+                tools:text="@string/value" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

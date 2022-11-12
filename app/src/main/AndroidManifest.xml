@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="rekayasaagromarin.ews3swj">
+    <!-- tools:ignore="LockedOrientationActivity"> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EWS3SWJ"
+        android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity,UnusedAttribute">
+        <activity
+            android:name=".ui.profile.changepassword.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.editprofile.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.menu.main.inputhistory.result.edit.EditResultHistoryActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputhistory.result.ResultHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.datastation.detail.DetailStationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.result.ResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.inputaddparam.InputAdditionalParamAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.inputaddparam.InputAdditionalParamBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.inputmainparam.InputMainParamAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.inputmainparam.AddMainParamBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.main.inputdata.inputmainparam.InputMainParamBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.datafamily.edit.EditFamilyBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.datafamily.add.AddFamilyBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.additionalabiotic.edit.EditAdditionalAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.additionalabiotic.add.AddAdditionalAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.mainabiotic.edit.EditMainAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.mainabiotic.add.AddMainAbioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.indexbiotic.edit.EditIndexBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.indexbiotic.add.AddIndexBioticActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.additionalabiotic.AdditionalAbioticActionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.mainabiotic.MainAbioticActionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.operator.dataweight.indexbiotic.IndexBioticActionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.admin.datapayment.action.PaymentActionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.admin.datauser.action.edit.EditUserActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.admin.datauser.action.add.AddUserActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.admin.datauser.action.UserActionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.menu.MainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.EWS3SWJ.NoActionBar" />
+        <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

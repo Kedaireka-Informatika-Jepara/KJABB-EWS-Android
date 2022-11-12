@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_data_user">
+
+    <fragment
+        android:id="@+id/nav_data_user"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.admin.datauser.DataUserFragment"
+        android:label="@string/menu_data_user"
+        tools:layout="@layout/fragment_data_user" />
+
+    <fragment
+        android:id="@+id/nav_data_payment"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.admin.datapayment.DataPaymentFragment"
+        android:label="@string/menu_data_payment"
+        tools:layout="@layout/fragment_data_payment" />
+
+    <fragment
+        android:id="@+id/nav_data_weight"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment"
+        android:label="@string/menu_data_weight"
+        tools:layout="@layout/fragment_data_weight" />
+
+    <fragment
+        android:id="@+id/nav_data_family_biotic"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.operator.datafamily.DataFamilyFragment"
+        android:label="@string/menu_data_family_biotic"
+        tools:layout="@layout/fragment_data_family" />
+
+    <fragment
+        android:id="@+id/nav_data_station"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.operator.datastation.DataStationFragment"
+        android:label="@string/menu_data_station"
+        tools:layout="@layout/fragment_data_station" />
+
+    <fragment
+        android:id="@+id/nav_input_data"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.main.inputdata.inputstation.InputStationFragment"
+        android:label="@string/menu_input_station"
+        tools:layout="@layout/fragment_input_station" />
+
+    <fragment
+        android:id="@+id/nav_input_history"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.main.inputhistory.InputHistoryFragment"
+        android:label="@string/menu_input_history"
+        tools:layout="@layout/fragment_input_history" />
+
+</navigation>

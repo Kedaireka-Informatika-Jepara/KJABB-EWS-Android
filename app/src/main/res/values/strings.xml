@@ -1,0 +1,202 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">EWS-3SWJ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_ews_3swj">Welcome to EWS-3SWJ</string>
+    <string name="desc_app">Ecologycal Assessment for Water Ecosystem Using Macrobenthic Assemblages</string>
+    <string name="email_address">Email address</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="payment">Payment</string>
+    <string name="registration">Registration</string>
+    <string name="repeat_password">Repreat password</string>
+    <string name="name">Name</string>
+    <string name="membership">Membership</string>
+    <string name="trial">Trial</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Nama</string>
+    <string name="nav_header_subtitle">email</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_data_user">Data User</string>
+    <string name="menu_data_payment">Data Payment</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="send">Send</string>
+    <string name="proof_of_payment">Proof of payment (max 2MB)</string>
+    <string name="menu_admin">Admin</string>
+    <string name="menu_operator">Operator</string>
+    <string name="menu_data_weight">Data Weight</string>
+    <string name="add_index_biotic">Add Index Biotic</string>
+    <string name="menu_data_family_biotic">Data Family Biotic</string>
+    <string name="menu_data_station">Data Station</string>
+    <string name="menu_main">Main</string>
+    <string name="menu_input_data">Input Data</string>
+    <string name="menu_input_history">Input History</string>
+    <string name="desc_add_user">menambah user</string>
+    <string name="desc_arrow_forward">arrow forward</string>
+    <string name="info_detail_user">Info Detail User</string>
+    <string name="email">Email</string>
+    <string name="id">Id</string>
+    <string name="role">Role</string>
+    <string name="status">Status</string>
+    <string name="action">Action</string>
+    <string name="deactivate">Deactivate</string>
+    <string name="activate">Activate</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="active">Active</string>
+    <string name="not_active">Not active</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="not_confirmed">Not confirmed</string>
+    <string name="confirm">Confirm</string>
+    <string name="unconfrim">Unconfirm</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="no_data_user">No data user</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_delete_user">Are you sure want to delete this account?</string>
+    <string name="confirm_activate_user">Are you sure want to %s this account?</string>
+    <string name="confirm_delete_payment">Are you sure want to delete this payment?</string>
+    <string name="confirm_confirm_payment">Are you sure want to %s this payment?</string>
+    <string name="confirm_delete_index_biotic">Are you sure want to delete this index biotic?</string>
+    <string name="confirm_delete_main_abiotic">Are you sure want to delete this main abiotic?</string>
+    <string name="confirm_delete_additional_abiotic">Are you sure want to delete this additional abiotic?</string>
+    <string name="confirm_delete_family_biotic">Are you sure want to delete this family biotic?</string>
+    <string name="confirm_delete_biotic_data">Are you sure want to delete this biotic data?</string>
+    <string name="confirm_delete_station">Are you sure want to delete this station?</string>
+    <string name="label">Label</string>
+    <string name="full_name">Full Name</string>
+    <string name="add">Add</string>
+    <string name="add_user">Add User</string>
+    <string name="edit_user">Edit User</string>
+    <string name="date">Date</string>
+    <string name="proof">Proof</string>
+    <string name="desc_proof_of_payment">Proof of payment</string>
+    <string name="info_detail_payment">Info Detail Payment</string>
+    <string name="no_results">No results</string>
+    <string name="value">Value</string>
+    <string name="type_of_parameter">Type of Parameter</string>
+    <string name="info_detail">Info Detail</string>
+    <string name="initial_value">Initail value</string>
+    <string name="final_value">Final value</string>
+    <string name="weight">Weight</string>
+    <string name="geographical_zone">Geographical zone</string>
+    <string name="type_of_water">Type of water</string>
+    <string name="parameter_name">Parameter name</string>
+    <string name="edit_index_biotic">Edit Index Biotic</string>
+    <string name="add_main_abiotic">Add Main Abiotic</string>
+    <string name="edit_main_abiotic">Edit Main Abiotic</string>
+    <string name="select_parameter">Select Parameter</string>
+    <string name="add_additional_abiotic">Add Additional Abiotic</string>
+    <string name="edit_additional_abiotic">Edit Additional Abiotic</string>
+    <string name="family_biotic">Family Biotic</string>
+    <string name="desc_edit">Edit</string>
+    <string name="desc_delete">delete</string>
+    <string name="add_family_biotic">Add Family Biotic</string>
+    <string name="family">Family</string>
+    <string name="edit_family_biotic">Edit Family Biotic</string>
+    <string name="input_station">Input Station</string>
+    <string name="station_id">Station ID</string>
+    <string name="proceed">Proceed</string>
+    <string name="abundance">Abundance</string>
+    <string name="species">Species</string>
+    <string name="next">Next</string>
+    <string name="add_species">Click \"add\" to add biotic data</string>
+    <string name="input_main_biotic">Input Main Parameter</string>
+    <string name="input_main_abiotic">Input Main Parameter</string>
+    <string name="add_biotic">Add Biotic Data</string>
+    <string name="menu_input_station">Input Station</string>
+    <string name="temperature">Temperature (℃)</string>
+    <string name="salinity">Salinity</string>
+    <string name="do_mg_l">DO (mg/L)</string>
+    <string name="ph">pH</string>
+    <string name="back">Back</string>
+    <string name="similarity">Similarity (J)</string>
+    <string name="dominance" tools:ignore="TypographyOther">Dominance(C)</string>
+    <string name="diversity">Diversity (H\')</string>
+    <string name="sum_abundance">Total Abundance</string>
+    <string name="sum_species">Number of Species</string>
+    <string name="indicator_taxa">Value of Indicator Taxa</string>
+    <string name="input_add_param">Input Additional Parameter</string>
+    <string name="biotic">Biotic</string>
+    <string name="abiotic">Abiotic</string>
+    <string name="conductivity">Conductivity (S)</string>
+    <string name="ratio">Ratio C/N</string>
+    <string name="turbidity">Turbidity (ntu)</string>
+    <string name="sand">Sand (%)</string>
+    <string name="clay">Clay (%)</string>
+    <string name="silt">Silt (%)</string>
+    <string name="count">Count</string>
+    <string name="result">Result</string>
+    <string name="conclusion">Conclusion</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="station">Station Info</string>
+    <string name="save">Save</string>
+    <string name="created_by">Created by</string>
+    <string name="taxa_indicator">Taxa indicator</string>
+    <string name="label_taxa_indicator">Taxa Indicator</string>
+    <string name="result_history">Result History</string>
+    <string name="view_proof">View</string>
+    <string name="desc_icon_app">icon application</string>
+    <string name="user_profile">User Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current password</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+
+    <string-array name="type_param">
+        <item>Index Biotic</item>
+        <item>Main Abiotic</item>
+        <item>Additional Abiotic</item>
+    </string-array>
+
+    <string-array name="index_biotic_param">
+        <item>Diversity</item>
+        <item>Dominance</item>
+        <item>Number of Species</item>
+        <item>Similarity</item>
+        <item>Total Abundance</item>
+    </string-array>
+
+    <string-array name="main_abiotic_param">
+        <item>DO</item>
+        <item>PH</item>
+        <item>Salinity</item>
+        <item>Temperature</item>
+    </string-array>
+
+    <string-array name="additional_abiotic_param">
+        <item>Clay</item>
+        <item>Conductivity</item>
+        <item>Turbidity</item>
+        <item>Ratio CN</item>
+        <item>Sand</item>
+        <item>Silt</item>
+        <item>Turbidity</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>Undisturbed Areas</item>
+        <item>Lightly Disturbed Areas</item>
+        <item>Moderately Disturbed Areas</item>
+        <item>Heavily Disturbed Areas</item>
+    </string-array>
+
+    <string-array name="conclusion">
+        <item>Water environment condition is healthy, within normal range and undisturbed (Undisturbed Areas)</item>
+        <item>The aquatic environment is disrupted light level by the surrounding activity (Lightly Disturbed Areas)</item>
+        <item>The aquatic environment is disrupted medium level by the surrounding activity (Moderately Disturbed Areas)</item>
+        <item>The aquatic environment is disrupted high level by the surrounding activity (Heavily Disturbed Areas)</item>
+    </string-array>
+
+    <string-array name="recommendation">
+        <item>Keep the carrying capacity of the environment (environmental carrying capacity) under normal/stable conditions (equilibrium)</item>
+        <item>Further monitoring of local environmental conditions is needed and also needed to identifies the underlying causes of environmental disturbance</item>
+        <item>Further investigation and the application of biomonitoring on a regular basis is necessary to determine the factors causing environmental disturbance and decreased activity</item>
+        <item>Immediate action is required to restore local environmental conditions (recovery action). And if necessary, stop the temporary activity of the cause of environmental disturbance (vallowing action) at the time period that determined based on abiotic and biotic factors</item>
+    </string-array>
+
+</resources>

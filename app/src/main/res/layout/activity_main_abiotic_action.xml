@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.menu.operator.dataweight.mainabiotic.MainAbioticActionActivity">
+
+    <include
+        android:id="@+id/main_abiotic_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.SemiBold"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/info_detail"
+                        android:textSize="16sp" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/id" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_id"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/id" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/name" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_name"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/name" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:layout_marginEnd="30dp"
+                                android:text="@string/geographical_zone" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_zone"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/geographical_zone" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/type_of_water" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_water"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/type_of_parameter" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/initial_value" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_initial"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/initial_value" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:layout_marginEnd="30dp"
+                                android:text="@string/final_value" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_final"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/final_value" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginBottom="8dp">
+
+                            <TextView
+                                style="@style/Text.Regular.UserLabel"
+                                android:text="@string/weight" />
+
+                            <TextView
+                                android:id="@+id/tv_main_abiotic_weight"
+                                style="@style/Text.SemiBold.UserValue"
+                                tools:text="@string/weight" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_main_info">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.SemiBold"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/action"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/btn_main_abiotic_edit"
+                            style="@style/Button.Action"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/caribbean_green"
+                            android:text="@string/edit" />
+
+                        <Button
+                            android:id="@+id/btn_main_abiotic_delete"
+                            style="@style/Button.Action"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="0.5"
+                            android:backgroundTint="@color/orange_soda"
+                            android:text="@string/delete" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/loading_main_abiotic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationZ="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_main_abiotic_error"
+                style="@style/Text.Regular"
+                android:text="@string/something_went_wrong"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

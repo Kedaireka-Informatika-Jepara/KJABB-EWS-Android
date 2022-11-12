@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".ui.auth.register.RegisterFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.Title"
+                android:text="@string/welcome_to_ews_3swj" />
+
+            <TextView
+                style="@style/Text.SubTitle"
+                android:layout_width="350dp"
+                android:text="@string/desc_app" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EditText.AuthLayout"
+                app:hintTextAppearance="@style/EditTextLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reg_edt_name"
+                    style="@style/EditText.AuthInput"
+                    android:autofillHints="name"
+                    android:background="@drawable/bg_input_auth"
+                    android:hint="@string/name"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EditText.AuthLayout"
+                app:hintTextAppearance="@style/EditTextLabel">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reg_edt_email"
+                    style="@style/EditText.AuthInput"
+                    android:autofillHints="emailAddress"
+                    android:background="@drawable/bg_input_auth"
+                    android:hint="@string/email_address"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EditText.AuthLayout"
+                app:hintTextAppearance="@style/EditTextLabel"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reg_edt_password"
+                    style="@style/EditText.AuthInput"
+                    android:autofillHints="password"
+                    android:background="@drawable/bg_input_auth"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/EditText.AuthLayout"
+                app:hintTextAppearance="@style/EditTextLabel"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reg_edt_repeat_password"
+                    style="@style/EditText.AuthInput"
+                    android:autofillHints="password"
+                    android:background="@drawable/bg_input_auth"
+                    android:hint="@string/repeat_password"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/reg_spin_membership"
+                style="@style/EditText.AuthLayout"
+                android:layout_height="58dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_input_auth"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/btn_register"
+                style="@style/Button.Auth"
+                android:text="@string/registration" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/registration_to_login"
+                    style="@style/Text.SemiBold.Auth"
+                    android:layout_marginEnd="32dp"
+                    android:text="@string/login" />
+
+                <TextView
+                    android:id="@+id/registration_to_payment"
+                    style="@style/Text.SemiBold.Auth"
+                    android:layout_marginStart="32dp"
+                    android:text="@string/payment" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/loading_register"
+            layout="@layout/view_loading"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</ScrollView>
