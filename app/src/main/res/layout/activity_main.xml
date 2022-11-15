@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:backgroundTint="#F6F6F6"
+    android:background="#F6F6F6"
     tools:openDrawer="start">
 
     <include
@@ -20,6 +22,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:background="#F6F6F6"
         app:headerLayout="@layout/nav_header_home"
         app:itemTextAppearance="@style/LabelNavDrawer"
         app:menu="@menu/activity_main_drawer" />

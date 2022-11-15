@@ -3,47 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="@string/menu_admin">
-        <menu>
-            <item
-                android:id="@+id/nav_data_user"
-                android:icon="@drawable/ic_data_user"
-                android:title="@string/menu_data_user" />
-            <item
-                android:id="@+id/nav_data_payment"
-                android:icon="@drawable/ic_data_payment"
-                android:title="@string/menu_data_payment" />
-        </menu>
-    </item>
 
-    <item android:title="@string/menu_operator">
-        <menu>
-            <item
-                android:id="@+id/nav_data_weight"
-                android:icon="@drawable/ic_data_weight"
-                android:title="@string/menu_data_weight" />
-            <item
-                android:id="@+id/nav_data_family_biotic"
-                android:icon="@drawable/ic_data_family_biotic"
-                android:title="@string/menu_data_family_biotic" />
-            <item
-                android:id="@+id/nav_data_station"
-                android:icon="@drawable/ic_data_station"
-                android:title="@string/menu_data_station" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_data_user"
+        android:icon="@drawable/ic_users"
+        android:title="@string/menu_data_user" />
+    <item
+        android:id="@+id/nav_data_payment"
+        android:icon="@drawable/ic_payment"
+        android:title="@string/menu_data_payment" />
 
-    <item android:title="@string/menu_main">
-        <menu>
-            <item
-                android:id="@+id/nav_input_data"
-                android:icon="@drawable/ic_input_user"
-                android:title="@string/menu_input_data" />
-            <item
-                android:id="@+id/nav_input_history"
-                android:icon="@drawable/ic_input_history"
-                android:title="@string/menu_input_history" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_data_weight"
+        android:icon="@drawable/ic_weight"
+        android:title="@string/menu_data_weight" />
+    <item
+        android:id="@+id/nav_data_family_biotic"
+        android:icon="@drawable/ic_data_family_biotic"
+        android:title="@string/menu_data_family_biotic" />
+    <item
+        android:id="@+id/nav_data_station"
+        android:icon="@drawable/ic_place"
+        android:title="@string/menu_data_station" />
+
+    <item
+        android:id="@+id/nav_input_data"
+        android:icon="@drawable/ic_input_data"
+        android:title="@string/menu_input_data" />
+    <item
+        android:id="@+id/nav_input_history"
+        android:icon="@drawable/ic_history"
+        android:title="@string/menu_input_history" />
 
 </menu>

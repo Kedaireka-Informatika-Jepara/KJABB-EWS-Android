@@ -125,7 +125,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val BASE_URL = "http://192.168.10.191:3308" //http://mews.cemebsa.com/
+//        const val BASE_URL = "http://192.168.1.80:3308"
+        const val BASE_URL = "http://mews.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"
