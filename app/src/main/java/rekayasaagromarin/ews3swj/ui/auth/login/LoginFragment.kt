@@ -2,6 +2,7 @@ package rekayasaagromarin.ews3swj.ui.auth.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,11 +47,12 @@ class LoginFragment : Fragment() {
     private fun checkLogin() {
         if (preferences.isLogin()!!) {
             val intentMain = Intent(context, MainActivity::class.java)
-            with(intentMain){
+            with(intentMain) {
                 putExtra(MainActivity.EXTRA_ID, preferences.getId())
                 putExtra(MainActivity.EXTRA_NAME, preferences.getName())
                 putExtra(MainActivity.EXTRA_EMAIL, preferences.getEmail())
                 putExtra(MainActivity.EXTRA_IMAGE, preferences.getImage())
+                putExtra(MainActivity.EXTRA_ROLE, preferences.getRole())
             }
             startActivity(intentMain)
             activity?.finish()
@@ -91,23 +93,13 @@ class LoginFragment : Fragment() {
         binding?.btnLogin?.setOnClickListener {
             binding?.apply {
                 when {
-                    logEdtEmail.text?.isEmpty() == true -> Toast.makeText(
-                        context,
-                        "Email is required",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    logEdtEmail.text?.isEmpty() == true ->
+                        Toast.makeText(context, "Email is required", Toast.LENGTH_SHORT).show()
 
-                    logEdtPassword.text?.isEmpty() == true -> Toast.makeText(
-                        context,
-                        "Password is required",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
-                    logEdtEmail.text?.matches(emailPattern.toRegex()) != true -> Toast.makeText(
-                        context,
-                        "Invalid email address",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    logEdtPassword.text?.isEmpty() == true ->
+                        Toast.makeText(context, "Password is required", Toast.LENGTH_SHORT).show()
+//                    TODO: JANGAN LUPA UNCOMMENT
+                    logEdtEmail.text?.matches(emailPattern.toRegex()) != true -> Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
 
                     else -> {
                         email = logEdtEmail.text.toString()
@@ -128,10 +120,8 @@ class LoginFragment : Fragment() {
                         setName(user.name)
                         setEmail(user.email)
                         setImage(user.image)
+                        setRole(user.roleId)
                     }
-
-                    Toast.makeText(context, user.message, Toast.LENGTH_SHORT).show()
-
                     val intentMain = Intent(context, MainActivity::class.java)
                     intentMain.putExtra(MainActivity.EXTRA_ID, user.id)
                     startActivity(intentMain)

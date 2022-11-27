@@ -19,7 +19,7 @@ class PreferencesManager(val context: Context?) {
     }
 
     fun setName(name : String){
-        editor?.putString(EMAIL, name)
+        editor?.putString(NAME, name)
         editor?.commit()
     }
 
@@ -29,7 +29,12 @@ class PreferencesManager(val context: Context?) {
     }
 
     fun setImage(image : String){
-        editor?.putString(EMAIL, image)
+        editor?.putString(IMAGE, image)
+        editor?.commit()
+    }
+
+    fun setRole(role_id : Int){
+        editor?.putInt(ROLE_ID, role_id)
         editor?.commit()
     }
 
@@ -53,6 +58,10 @@ class PreferencesManager(val context: Context?) {
         return preferences?.getString(IMAGE, "")
     }
 
+    fun getRole(): Int? {
+        return preferences?.getInt(ROLE_ID, 0)
+    }
+
     fun removeData() {
         editor?.clear()
         editor?.commit()
@@ -65,5 +74,6 @@ class PreferencesManager(val context: Context?) {
         private const val NAME = "name"
         private const val EMAIL = "email"
         private const val IMAGE = "image"
+        private const val ROLE_ID = "role_id"
     }
 }

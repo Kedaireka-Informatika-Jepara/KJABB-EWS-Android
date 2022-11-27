@@ -22,5 +22,8 @@ data class AuthUser(
     val image: String = "",
 
     @field:SerializedName("is_active")
-    val isActive : Int = 0
+    val isActive : Int = 0,
+
+    @field:SerializedName("role_id")
+    val roleId: Int = 0
 )

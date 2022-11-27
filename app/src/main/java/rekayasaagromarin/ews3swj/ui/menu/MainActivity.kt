@@ -11,18 +11,18 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.*
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityMainBinding
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.auth.AuthActivity
 import rekayasaagromarin.ews3swj.ui.profile.ProfileActivity
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvNavHeaderEmail: TextView
     private lateinit var imgProfile: ImageView
 
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+    private lateinit var navController: NavController
+    private var role: Int = 0
+
     private val mainViewModel: MainViewModel by viewModels()
     private val preferences: PreferencesManager by lazy { PreferencesManager(applicationContext) }
 
@@ -44,6 +49,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarHome.toolbar)
+
+        val name = intent.getStringExtra(EXTRA_NAME)
+        Toast.makeText(this, "Selamat Datang $name", Toast.LENGTH_SHORT).show()
+
+        role = intent.getIntExtra(EXTRA_ROLE, 0);
+        Toast.makeText(this, "MainActivity role id : $role", Toast.LENGTH_SHORT).show()
 
         initNavDrawer()
         initUser()
@@ -66,8 +77,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavDrawer() {
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        drawerLayout = binding.drawerLayout
+        navView = binding.navView
         val navController by lazy {
             val navHostFragment = supportFragmentManager
                 .findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
@@ -82,6 +93,14 @@ class MainActivity : AppCompatActivity() {
             ), drawerLayout
         )
 
+//        navView.menu[1].isVisible = false
+//        navView.menu[0].subMenu?.get(0)?.isChecked = true
+
+        val item = navView.checkedItem
+        Toast.makeText(this, "MainActivity item id : ${item?.itemId}", Toast.LENGTH_SHORT).show()
+
+        navView.setCheckedItem(R.id.nav_data_user)
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -90,6 +109,8 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.home, menu)
         return true
     }
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -125,12 +146,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-//        const val BASE_URL = "http://192.168.1.80:3308"
+        //        const val BASE_URL = "http://10.101.8.205:3308"
         const val BASE_URL = "http://mews.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"
         const val EXTRA_IMAGE = "extra image"
+        const val EXTRA_ROLE = "extra role"
         var isUpdate = false
     }
 }

@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <item
+        android:id="@+id/admin_item"
+        android:title="ADMIN">
+
+        <menu>
+            <item
+                android:id="@+id/nav_data_user"
+                android:checkable="true"
+                android:icon="@drawable/ic_users"
+                android:title="@string/menu_data_user" />
+            <item
+                android:id="@+id/nav_data_payment"
+                android:checkable="true"
+                android:icon="@drawable/ic_payment"
+                android:title="@string/menu_data_payment" />
+        </menu>
+    </item>
 
     <item
-        android:id="@+id/nav_data_user"
-        android:icon="@drawable/ic_users"
-        android:title="@string/menu_data_user" />
-    <item
-        android:id="@+id/nav_data_payment"
-        android:icon="@drawable/ic_payment"
-        android:title="@string/menu_data_payment" />
+        android:id="@+id/operator_item"
+        android:title="OPERATOR">
+        <menu>
+            <item
+                android:id="@+id/nav_data_weight"
+                android:checkable="true"
+                android:icon="@drawable/ic_weight"
+                android:title="@string/menu_data_weight" />
+            <item
+                android:id="@+id/nav_data_family_biotic"
+                android:checkable="true"
+                android:icon="@drawable/ic_family_biotik"
+                android:title="@string/menu_data_family_biotic" />
+            <item
+                android:id="@+id/nav_data_station"
+                android:checkable="true"
+                android:icon="@drawable/ic_place"
+                android:title="@string/menu_data_station" />
+        </menu>
+    </item>
 
     <item
-        android:id="@+id/nav_data_weight"
-        android:icon="@drawable/ic_weight"
-        android:title="@string/menu_data_weight" />
-    <item
-        android:id="@+id/nav_data_family_biotic"
-        android:icon="@drawable/ic_data_family_biotic"
-        android:title="@string/menu_data_family_biotic" />
-    <item
-        android:id="@+id/nav_data_station"
-        android:icon="@drawable/ic_place"
-        android:title="@string/menu_data_station" />
-
-    <item
-        android:id="@+id/nav_input_data"
-        android:icon="@drawable/ic_input_data"
-        android:title="@string/menu_input_data" />
-    <item
-        android:id="@+id/nav_input_history"
-        android:icon="@drawable/ic_history"
-        android:title="@string/menu_input_history" />
-
+        android:id="@+id/member_item"
+        android:title="MEMBER">
+        <menu>
+            <item
+                android:id="@+id/nav_input_data"
+                android:checkable="true"
+                android:icon="@drawable/ic_input_data"
+                android:title="@string/menu_input_data" />
+            <item
+                android:id="@+id/nav_input_history"
+                android:checkable="true"
+                android:icon="@drawable/ic_history"
+                android:title="@string/menu_input_history" />
+        </menu>
+    </item>
 </menu>

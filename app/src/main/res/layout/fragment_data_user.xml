@@ -53,6 +53,7 @@
         android:layout_marginBottom="16dp"
         android:contentDescription="@string/desc_add_user"
         app:srcCompat="@drawable/ic_add_user"
+        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"
         app:tint="@color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
