@@ -123,7 +123,10 @@ class LoginFragment : Fragment() {
                         setRole(user.roleId)
                     }
                     val intentMain = Intent(context, MainActivity::class.java)
-                    intentMain.putExtra(MainActivity.EXTRA_ID, user.id)
+                    with(intentMain) {
+                        putExtra(MainActivity.EXTRA_ID, user.id)
+                        putExtra(MainActivity.EXTRA_ROLE, user.roleId)
+                    }
                     startActivity(intentMain)
                     activity?.finish()
                 } else {
@@ -141,7 +144,6 @@ class LoginFragment : Fragment() {
                 }
             }
         }
-
     }
 
     private fun showLoading(isLoading: Boolean) {

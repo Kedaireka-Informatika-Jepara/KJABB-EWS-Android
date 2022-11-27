@@ -116,7 +116,7 @@ class PaymentActionActivity : AppCompatActivity(), View.OnClickListener {
 
                     tvProof.text = payment.proof
                     btnViewProof.setOnClickListener {
-                        val url = "${MainActivity.BASE_URL}/api/v1/images/payment/${payment.proof}"
+                        val url = "${MainActivity.BASE_URL}api/v1/images/payment/${payment.proof}"
 
                         val intentViewProof = Intent(Intent.ACTION_VIEW)
                         intentViewProof.data = Uri.parse(url)

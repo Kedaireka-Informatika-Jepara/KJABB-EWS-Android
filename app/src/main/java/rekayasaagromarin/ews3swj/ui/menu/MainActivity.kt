@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
-    private lateinit var navController: NavController
     private var role: Int = 0
 
     private val mainViewModel: MainViewModel by viewModels()
@@ -49,9 +48,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarHome.toolbar)
-
-        val name = intent.getStringExtra(EXTRA_NAME)
-        Toast.makeText(this, "Selamat Datang $name", Toast.LENGTH_SHORT).show()
 
         role = intent.getIntExtra(EXTRA_ROLE, 0);
         Toast.makeText(this, "MainActivity role id : $role", Toast.LENGTH_SHORT).show()
@@ -93,11 +89,12 @@ class MainActivity : AppCompatActivity() {
             ), drawerLayout
         )
 
-//        navView.menu[1].isVisible = false
-//        navView.menu[0].subMenu?.get(0)?.isChecked = true
-
-        val item = navView.checkedItem
-        Toast.makeText(this, "MainActivity item id : ${item?.itemId}", Toast.LENGTH_SHORT).show()
+        if (role == 2) {
+            navView.menu[0].isVisible = false
+            navView.menu[1].isVisible = false
+        } else if (role == 3) {
+            navView.menu[0].isVisible = false
+        }
 
         navView.setCheckedItem(R.id.nav_data_user)
 
@@ -109,8 +106,6 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.home, menu)
         return true
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -146,8 +141,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        //        const val BASE_URL = "http://10.101.8.205:3308"
-        const val BASE_URL = "http://mews.cemebsa.com/"
+        const val BASE_URL = "http://10.101.8.205:3308/"
+        //const val BASE_URL = "http://mews.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"

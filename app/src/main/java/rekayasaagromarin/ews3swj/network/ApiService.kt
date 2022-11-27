@@ -8,14 +8,14 @@ import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
-    @POST("api/v1/auth/login")
+    @POST("/api/v1/auth/login")
     fun loginUser(
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<AuthUser>
 
     @FormUrlEncoded
-    @POST("api/v1/auth/register")
+    @POST("/api/v1/auth/register")
     fun registerUser(
         @Field("name") name: String,
         @Field("email") email: String,
@@ -426,6 +426,13 @@ interface ApiService {
     @Multipart
     @POST("/api/v1/data_payment/upload_payment")
     fun uploadPayment(
+        @Part("user_email") userEmail: RequestBody,
+        @Part image: MultipartBody.Part
+    ): Call<ResponseApi>
+
+    @Multipart
+    @POST("/api/v1/profile/upload_photo")
+    fun uploadPhoto(
         @Part("user_email") userEmail: RequestBody,
         @Part image: MultipartBody.Part
     ): Call<ResponseApi>

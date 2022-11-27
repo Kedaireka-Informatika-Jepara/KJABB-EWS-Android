@@ -132,9 +132,7 @@ class PaymentFragment : Fragment() {
                 it.action = Intent.ACTION_PICK
                 it.putExtra(Intent.EXTRA_MIME_TYPES, mimeType)
             }
-
             startForGetImage.launch(intentSelectImage)
-
         }
     }
 
