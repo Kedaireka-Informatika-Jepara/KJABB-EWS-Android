@@ -115,6 +115,7 @@ class PaymentActionActivity : AppCompatActivity(), View.OnClickListener {
                         if (isConfirmed) getString(R.string.confirmed) else getString(R.string.not_confirmed)
 
                     tvProof.text = payment.proof
+                    tvProof.visibility = View.VISIBLE
                     btnViewProof.setOnClickListener {
                         val url = "${MainActivity.BASE_URL}api/v1/images/payment/${payment.proof}"
 

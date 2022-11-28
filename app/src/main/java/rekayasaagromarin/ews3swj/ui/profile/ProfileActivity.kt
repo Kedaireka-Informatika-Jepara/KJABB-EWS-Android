@@ -7,10 +7,12 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.OpenableColumns
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import com.bumptech.glide.Glide
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -18,6 +20,7 @@ import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityProfileBinding
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.auth.payment.UploadRequestBody
+import rekayasaagromarin.ews3swj.ui.menu.MainActivity
 import rekayasaagromarin.ews3swj.ui.profile.changepassword.ChangePasswordActivity
 import rekayasaagromarin.ews3swj.ui.profile.editprofile.EditProfileActivity
 import java.io.File
@@ -145,6 +148,12 @@ class ProfileActivity : AppCompatActivity() {
         profileViewModel.getUser().observe(this) {
             with(binding) {
 //                imgProfile.setImageResource(it.image)
+                val url = "${MainActivity.BASE_URL}api/v1/images/profile/${it.image}"
+                Glide.with(this@ProfileActivity)
+                    .load(url)
+                    .centerCrop()
+                    .placeholder(R.drawable.ic_default_profile)
+                    .into(imgProfile)
                 tvProfileName.text = it.name
                 tvProfileEmail.text = it.email
                 tvProfileRole.text = it.role

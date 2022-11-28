@@ -17,6 +17,7 @@ import androidx.core.view.get
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
+import com.bumptech.glide.Glide
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityMainBinding
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var viewHeader: View
+    private lateinit var imgNavHeaderPhoto: ImageView
     private lateinit var tvNavHeaderName: TextView
     private lateinit var tvNavHeaderEmail: TextView
     private lateinit var imgProfile: ImageView
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUser() {
         viewHeader = binding.navView.getHeaderView(0)
+        imgNavHeaderPhoto = viewHeader.findViewById(R.id.img_nav_header_photo)
         tvNavHeaderName = viewHeader.findViewById(R.id.tv_nav_header_name)
         tvNavHeaderEmail = viewHeader.findViewById(R.id.tv_nav_header_email)
         imgProfile = viewHeader.findViewById(R.id.img_nav_header_photo)
@@ -67,6 +70,13 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.setUser(intent.getIntExtra(EXTRA_ID, 0))
         mainViewModel.getUser().observe(this) { user ->
+            val url = "${BASE_URL}api/v1/images/profile/${user.image}"
+            Glide.with(this)
+                .load(url)
+                .centerCrop()
+                .placeholder(R.drawable.ic_default_profile)
+                .into(imgNavHeaderPhoto)
+
             tvNavHeaderName.text = user.name
             tvNavHeaderEmail.text = user.email
         }
@@ -141,7 +151,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val BASE_URL = "http://10.101.8.205:3308/"
+        const val BASE_URL = "http://10.101.10.190:3308/"
         //const val BASE_URL = "http://mews.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
