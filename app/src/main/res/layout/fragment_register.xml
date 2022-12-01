@@ -52,7 +52,7 @@
                     android:autofillHints="emailAddress"
                     android:background="@drawable/bg_input_auth"
                     android:hint="@string/email_address"
-                    android:inputType="text" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

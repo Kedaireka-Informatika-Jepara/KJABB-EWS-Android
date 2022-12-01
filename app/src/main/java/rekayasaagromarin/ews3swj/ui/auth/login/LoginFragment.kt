@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import rekayasaagromarin.ews3swj.R
+import rekayasaagromarin.ews3swj.databinding.FragmentInputStationBinding
 import rekayasaagromarin.ews3swj.databinding.FragmentLoginBinding
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.menu.MainActivity
@@ -20,7 +21,7 @@ import rekayasaagromarin.ews3swj.ui.auth.register.RegisterFragment
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding
+    private val binding get() = _binding!!
     private val loginViewModel: LoginViewModel by viewModels()
     private val preferences: PreferencesManager by lazy { PreferencesManager(context) }
     private lateinit var email: String
@@ -30,9 +31,9 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

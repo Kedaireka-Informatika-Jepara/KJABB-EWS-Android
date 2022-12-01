@@ -99,14 +99,22 @@ class MainActivity : AppCompatActivity() {
             ), drawerLayout
         )
 
-        if (role == 2) {
-            navView.menu[0].isVisible = false
-            navView.menu[1].isVisible = false
-        } else if (role == 3) {
-            navView.menu[0].isVisible = false
+        when (role) {
+            1 -> {
+                navView.setCheckedItem(R.id.nav_data_user)
+            }
+            2 -> {
+                navView.menu[0].isVisible = false
+                navView.menu[1].isVisible = false
+                navView.setCheckedItem(R.id.nav_input_data)
+                navController.navigate(R.id.nav_input_data)
+            }
+            else -> {
+                navView.menu[0].isVisible = false
+                navView.setCheckedItem(R.id.nav_data_weight)
+                navController.navigate(R.id.nav_data_weight)
+            }
         }
-
-        navView.setCheckedItem(R.id.nav_data_user)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -151,8 +159,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val BASE_URL = "http://10.101.10.190:3308/"
-        //const val BASE_URL = "http://mews.cemebsa.com/"
+//        const val BASE_URL = "http://10.101.10.190:3308/"
+        const val BASE_URL = "http://mews.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"

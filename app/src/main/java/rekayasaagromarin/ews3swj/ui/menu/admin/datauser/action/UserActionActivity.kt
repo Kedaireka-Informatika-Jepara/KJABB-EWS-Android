@@ -8,11 +8,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityUserActionBinding
 import rekayasaagromarin.ews3swj.model.User
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.auth.AuthActivity
+import rekayasaagromarin.ews3swj.ui.menu.MainActivity
 import rekayasaagromarin.ews3swj.ui.menu.admin.datauser.DataUserFragment
 import rekayasaagromarin.ews3swj.ui.menu.admin.datauser.action.activate.ActivateUserFragment
 import rekayasaagromarin.ews3swj.ui.menu.admin.datauser.action.delete.DeleteUserFragment
@@ -81,6 +83,14 @@ class UserActionActivity : AppCompatActivity(), View.OnClickListener {
                 with(binding) {
                     this@UserActionActivity.idUser = user.userId
                     this@UserActionActivity.isActivate = user.isActive
+
+                    val url = "${MainActivity.BASE_URL}api/v1/images/profile/${user.image}"
+
+                    Glide.with(this@UserActionActivity)
+                        .load(url)
+                        .placeholder(R.drawable.ic_default_profile)
+                        .error(R.drawable.ic_default_profile)
+                        .into(imgUser)
 
                     tvUserName.text = user.name
                     tvUserEmail.text = user.email
