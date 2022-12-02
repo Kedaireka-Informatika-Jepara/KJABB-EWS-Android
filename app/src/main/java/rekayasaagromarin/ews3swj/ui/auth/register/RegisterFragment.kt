@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.FragmentRegisterBinding
 import rekayasaagromarin.ews3swj.model.User
@@ -21,7 +22,7 @@ class RegisterFragment : Fragment() {
     private val binding get() = _binding
 
     private val registerViewModel: RegisterViewModel by viewModels()
-    private val membership = arrayListOf("Select membership")
+    private val membership = Array(4) { "Select Membership" }
     private var membershipId: Int = 0
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
@@ -45,6 +46,7 @@ class RegisterFragment : Fragment() {
     private fun registerAccess() {
 
         binding?.btnRegister?.setOnClickListener {
+//            Toast.makeText(requireContext(), membershipId.toString(), Toast.LENGTH_SHORT).show()
             binding?.apply {
                 when {
                     regEdtName.text?.isEmpty() == true -> Toast.makeText(
@@ -71,7 +73,19 @@ class RegisterFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     ).show()
 
-                    regSpinMembership.selectedItemPosition == 0 -> Toast.makeText(
+//                    regSpinMembership.selectedItemPosition == 0 -> Toast.makeText(
+//                        context,
+//                        "Membership is required",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+
+//                    regSpinMembership.text.toString() == "0" -> Toast.makeText(
+//                        context,
+//                        "Membership is required",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+
+                    membershipId == 0 -> Toast.makeText(
                         context,
                         "Membership is required",
                         Toast.LENGTH_SHORT
@@ -126,37 +140,46 @@ class RegisterFragment : Fragment() {
         with(registerViewModel) {
             setMembership()
             getMembership().observe(viewLifecycleOwner) { list ->
-                membership.addAll(list)
+                for (i in list.indices) {
+                    membership[i + 1] = list[i]
+                }
+                (binding?.regSpinMembership as MaterialAutoCompleteTextView).setSimpleItems(membership)
             }
         }
 
-        val spinnerArrayAdapter = ArrayAdapter(
-            requireContext(),
-            R.layout.support_simple_spinner_dropdown_item,
-            membership
-        )
-        spinnerArrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        binding?.regSpinMembership?.adapter = spinnerArrayAdapter
-        binding?.regSpinMembership?.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    if (position > 0) {
-                        val item = parent?.getItemAtPosition(position).toString()
-                        Toast.makeText(parent?.context, "Membership: $item", Toast.LENGTH_SHORT)
-                            .show()
-                        membershipId = position
-                    }
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-
-                }
+        binding?.regSpinMembership?.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                membershipId = position
+                //                Toast.makeText(context, membershipId.toString(), Toast.LENGTH_SHORT).show()
             }
+
+//        val spinnerArrayAdapter = ArrayAdapter(
+//            requireContext(),
+//            R.layout.support_simple_spinner_dropdown_item,
+//            membership
+//        )
+//        spinnerArrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
+//        binding?.regSpinMembership?.adapter = spinnerArrayAdapter
+//        binding?.regSpinMembership?.onItemSelectedListener =
+//            object : AdapterView.OnItemSelectedListener {
+//                override fun onItemSelected(
+//                    parent: AdapterView<*>?,
+//                    view: View?,
+//                    position: Int,
+//                    id: Long
+//                ) {
+//                    if (position > 0) {
+//                        val item = parent?.getItemAtPosition(position).toString()
+//                        Toast.makeText(parent?.context, "Membership: $item", Toast.LENGTH_SHORT)
+//                            .show()
+//                        membershipId = position
+//                    }
+//                }
+//
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//
+//                }
+//            }
     }
 
     private fun toLogin() {

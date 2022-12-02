@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
     tools:context=".ui.auth.login.LoginFragment">
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/frameLayout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:background="@drawable/plane"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--    </FrameLayout>-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/plane"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/white"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/Text.Title"
@@ -21,96 +46,110 @@
 
         <TextView
             style="@style/Text.SubTitle"
-            android:layout_width="350dp"
+            android:layout_marginTop="8dp"
             android:text="@string/desc_app" />
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/outlinedTextField"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="@string/email_address"-->
-<!--            android:layout_marginHorizontal="30dp">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_address">
 
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:id="@+id/log_edt_email"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:inputType="textEmailAddress" />-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/log_edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
 
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            app:hintTextAppearance="@style/EditTextLabel"-->
-<!--            style="@style/EditText.AuthLayout"-->
-<!--            app:passwordToggleEnabled="true">-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            app:passwordToggleEnabled="true">
 
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:id="@+id/log_edt_password"-->
-<!--                android:autofillHints="password"-->
-<!--                android:background="@drawable/bg_input_auth"-->
-<!--                android:hint="@string/password"-->
-<!--                style="@style/EditText.AuthInput"-->
-<!--                android:inputType="textPassword" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/log_edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/EditText.AuthLayout"
-                    app:hintTextAppearance="@style/EditTextLabel">
+        <!--                <com.google.android.material.textfield.TextInputLayout-->
+        <!--                    style="@style/EditText.AuthLayout"-->
+        <!--                    app:hintTextAppearance="@style/EditTextLabel">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/log_edt_email"
-                        style="@style/EditText.AuthInput"
-                        android:autofillHints="emailAddress"
-                        android:background="@drawable/bg_input_auth"
-                        android:hint="@string/email_address"
-                        android:inputType="textEmailAddress" />
-                </com.google.android.material.textfield.TextInputLayout>
+        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+        <!--                        android:id="@+id/log_edt_email"-->
+        <!--                        style="@style/EditText.AuthInput"-->
+        <!--                        android:autofillHints="emailAddress"-->
+        <!--                        android:background="@drawable/bg_input_auth"-->
+        <!--                        android:hint="@string/email_address"-->
+        <!--                        android:inputType="textEmailAddress" />-->
+        <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-                <com.google.android.material.textfield.TextInputLayout
-                    app:hintTextAppearance="@style/EditTextLabel"
-                    style="@style/EditText.AuthLayout"
-                    app:passwordToggleEnabled="true">
+        <!--                <com.google.android.material.textfield.TextInputLayout-->
+        <!--                    app:hintTextAppearance="@style/EditTextLabel"-->
+        <!--                    style="@style/EditText.AuthLayout"-->
+        <!--                    app:passwordToggleEnabled="true">-->
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/log_edt_password"
-                        android:autofillHints="password"
-                        android:background="@drawable/bg_input_auth"
-                        android:hint="@string/password"
-                        style="@style/EditText.AuthInput"
-                        android:inputType="textPassword" />
-                </com.google.android.material.textfield.TextInputLayout>
+        <!--                    <com.google.android.material.textfield.TextInputEditText-->
+        <!--                        android:id="@+id/log_edt_password"-->
+        <!--                        android:autofillHints="password"-->
+        <!--                        android:background="@drawable/bg_input_auth"-->
+        <!--                        android:hint="@string/password"-->
+        <!--                        style="@style/EditText.AuthInput"-->
+        <!--                        android:inputType="textPassword" />-->
+        <!--                </com.google.android.material.textfield.TextInputLayout>-->
 
-        <Button
-            android:id="@+id/btn_login"
-            style="@style/Button.Auth"
-            android:text="@string/login" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:gravity="center"
+            android:gravity="end"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/login_to_registration"
-                style="@style/Text.SemiBold.Auth"
-                android:layout_marginEnd="32dp"
-                android:text="@string/registration" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/login_to_registration"-->
+            <!--                style="@style/Text.SemiBold.Auth"-->
+            <!--                android:layout_marginEnd="32dp"-->
+            <!--                android:text="@string/registration" />-->
 
-            <TextView
-                android:id="@+id/login_to_payment"
-                style="@style/Text.SemiBold.Auth"
-                android:layout_marginStart="32dp"
-                android:text="@string/payment" />
+            <!--            add button disabled-->
+
+            <Button
+                android:id="@+id/login_to_registration"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeColor="@color/royal_blue"
+                android:text="Daftar" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="8dp"
+                android:text="Masuk" />
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/login_to_payment"
+        style="@style/Text.SemiBold.Auth"
+        android:text="@string/payment"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <include
         android:id="@+id/loading_login"
         layout="@layout/view_loading"
         android:visibility="gone" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

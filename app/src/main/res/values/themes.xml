@@ -17,7 +17,7 @@
         <item name="colorOnSecondaryContainer">@color/royal_blue</item>
 
 <!--        <item name="colorSurface">@color/royal_blue</item>-->
-<!--        <item name="colorOnSurface">@color/white</item>-->
+        <item name="colorOnSurface">@color/royal_blue</item>
     </style>
 
     <style name="EditTextLabel">
