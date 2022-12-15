@@ -15,7 +15,7 @@
         <item name="colorPrimaryContainer">@color/royal_blue</item>
         <item name="colorSecondaryContainer">@color/tipe1</item>
         <item name="colorOnSecondaryContainer">@color/royal_blue</item>
-
+        <item name="android:windowTranslucentStatus">true</item>
 <!--        <item name="colorSurface">@color/royal_blue</item>-->
         <item name="colorOnSurface">@color/royal_blue</item>
     </style>

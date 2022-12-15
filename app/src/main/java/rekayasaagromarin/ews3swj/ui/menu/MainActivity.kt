@@ -15,7 +15,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.navGraphViewModels
 import androidx.navigation.ui.*
 import com.bumptech.glide.Glide
 import rekayasaagromarin.ews3swj.R
@@ -85,34 +87,43 @@ class MainActivity : AppCompatActivity() {
     private fun initNavDrawer() {
         drawerLayout = binding.drawerLayout
         navView = binding.navView
+
         val navController by lazy {
             val navHostFragment = supportFragmentManager
                 .findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
+//            when(role){
+//                1 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_data_user)
+//                2 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_input_data)
+//                3 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_data_weight)
+//            }
+            navHostFragment.navController.graph = navHostFragment.navController.navInflater.inflate(R.navigation.mobile_navigation).apply {
+                val startDestination = when (role) {
+                    1 -> R.id.nav_data_payment
+                    2 -> R.id.nav_input_data
+                    3 -> R.id.nav_data_weight
+                    else -> R.id.nav_data_payment
+                }
+                this.setStartDestination(startDestination)
+            }
             navHostFragment.navController
         }
 
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_data_user, R.id.nav_data_payment,
-                R.id.nav_data_weight, R.id.nav_data_family_biotic, R.id.nav_data_station,
-                R.id.nav_input_data, R.id.nav_input_history
-            ), drawerLayout
-        )
+        appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.nav_data_user, R.id.nav_data_payment,
+            R.id.nav_data_weight, R.id.nav_data_family_biotic, R.id.nav_data_station,
+            R.id.nav_input_data, R.id.nav_input_history
+        ), drawerLayout)
 
         when (role) {
             1 -> {
-                navView.setCheckedItem(R.id.nav_data_user)
+
             }
             2 -> {
                 navView.menu[0].isVisible = false
                 navView.menu[1].isVisible = false
-                navView.setCheckedItem(R.id.nav_input_data)
-                navController.navigate(R.id.nav_input_data)
             }
             else -> {
                 navView.menu[0].isVisible = false
-                navView.setCheckedItem(R.id.nav_data_weight)
-                navController.navigate(R.id.nav_data_weight)
             }
         }
 

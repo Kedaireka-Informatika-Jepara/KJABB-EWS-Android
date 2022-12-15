@@ -14,13 +14,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity,UnusedAttribute">
         <activity
-            android:name=".ui.auth.login.LoginActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.profile.changepassword.ChangePasswordActivity"
             android:exported="false" />
         <activity
