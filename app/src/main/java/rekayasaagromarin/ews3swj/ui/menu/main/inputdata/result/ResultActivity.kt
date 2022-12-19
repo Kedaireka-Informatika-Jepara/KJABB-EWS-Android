@@ -219,7 +219,7 @@ class ResultActivity : AppCompatActivity() {
     private fun setAbiotic(indexAdd: IndexAddStation?, main: MainAbioticStation?) {
         with(binding.viewAbiotic) {
             if (indexAdd != null && main != null) {
-                tvResultClay.text = convertDecimal(indexAdd.clay)
+                tvResultClay.text = indexAdd.clay
                 tvResultConductivity.text = convertDecimal(indexAdd.conductivity)
                 tvResultDo.text = convertDecimal(main.doParam)
                 tvResultDiversity.text = convertDecimal(indexAdd.diversity)

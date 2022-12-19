@@ -91,17 +91,13 @@ class MainActivity : AppCompatActivity() {
         val navController by lazy {
             val navHostFragment = supportFragmentManager
                 .findFragmentById(R.id.nav_host_fragment_content_home) as NavHostFragment
-//            when(role){
-//                1 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_data_user)
-//                2 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_input_data)
-//                3 -> navHostFragment.navController.graph.setStartDestination(R.id.nav_data_weight)
-//            }
+
             navHostFragment.navController.graph = navHostFragment.navController.navInflater.inflate(R.navigation.mobile_navigation).apply {
                 val startDestination = when (role) {
-                    1 -> R.id.nav_data_payment
+                    1 -> R.id.nav_data_user
                     2 -> R.id.nav_input_data
                     3 -> R.id.nav_data_weight
-                    else -> R.id.nav_data_payment
+                    else -> R.id.nav_data_user
                 }
                 this.setStartDestination(startDestination)
             }
@@ -116,13 +112,15 @@ class MainActivity : AppCompatActivity() {
 
         when (role) {
             1 -> {
-
+                navView.setCheckedItem(R.id.nav_data_user)
             }
             2 -> {
+                navView.setCheckedItem(R.id.nav_input_data)
                 navView.menu[0].isVisible = false
                 navView.menu[1].isVisible = false
             }
             else -> {
+                navView.setCheckedItem(R.id.nav_data_weight)
                 navView.menu[0].isVisible = false
             }
         }
@@ -170,8 +168,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-//        const val BASE_URL = "http://10.101.10.190:3308/"
-        const val BASE_URL = "http://mews.cemebsa.com/"
+        const val BASE_URL = "http://10.101.12.228:3308/"
+//        const val BASE_URL = "http://mews2.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"

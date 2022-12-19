@@ -42,7 +42,7 @@ data class IndexAddStation(
     @field:SerializedName("taxa_indicator")
     val taxaIndicator: Double = 0.0,
 
-    @field:SerializedName("bobot_taxa_indicator")
+    @field:SerializedName("bobot_taxa_indicator") //gada
     val wTaxaIndicator: Double = 0.0,
 
     @field:SerializedName("conductivity")
@@ -63,17 +63,20 @@ data class IndexAddStation(
     @field:SerializedName("bobot_turbidity")
     val wTurbidity: Double = 0.0,
 
-    @field:SerializedName("clay")
-    val clay: Double = 0.0,
-
-    @field:SerializedName("bobot_clay")
-    val wClay: Double = 0.0,
-
     @field:SerializedName("sand")
     val sand: Double = 0.0,
 
     @field:SerializedName("bobot_sand")
     val wSand: Double = 0.0,
+
+//    @field:SerializedName("clay")
+//    val clay: Double = 0.0,
+
+    @field:SerializedName("clay")
+    val clay: String = "",
+
+    @field:SerializedName("bobot_clay")
+    val wClay: Double = 0.0,
 
     @field:SerializedName("silt")
     val silt: Double = 0.0,
@@ -81,9 +84,9 @@ data class IndexAddStation(
     @field:SerializedName("bobot_silt")
     val wSilt: Double = 0.0,
 
-    @field:SerializedName("user_id")
-    val userId: Int = 0,
-
     @field:SerializedName("station_id")
     val stationId: String = "",
+
+    @field:SerializedName("user_id")
+    val userId: Int = 0,
 ) : Parcelable

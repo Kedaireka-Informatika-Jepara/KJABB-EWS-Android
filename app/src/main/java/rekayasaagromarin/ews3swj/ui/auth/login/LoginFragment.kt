@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun toRegistration() {
-        binding?.loginToRegistration?.setOnClickListener {
+        binding.loginToRegistration.setOnClickListener {
             val mRegisterFragment = RegisterFragment()
             val mFragmentManager = parentFragmentManager
             mFragmentManager.commit {
@@ -76,7 +76,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun toPayment() {
-        binding?.loginToPayment?.setOnClickListener {
+        binding.loginToPayment.setOnClickListener {
             val mPaymentFragment = PaymentFragment()
             val mFragmentManager = parentFragmentManager
             mFragmentManager.commit {
@@ -91,15 +91,15 @@ class LoginFragment : Fragment() {
     }
 
     private fun loginAccess() {
-        binding?.btnLogin?.setOnClickListener {
-            binding?.apply {
+        binding.btnLogin.setOnClickListener {
+            binding.apply {
                 when {
                     logEdtEmail.text?.isEmpty() == true ->
                         Toast.makeText(context, "Email is required", Toast.LENGTH_SHORT).show()
 
                     logEdtPassword.text?.isEmpty() == true ->
                         Toast.makeText(context, "Password is required", Toast.LENGTH_SHORT).show()
-//                    TODO: JANGAN LUPA UNCOMMENT
+                    //                    TODO: JANGAN LUPA UNCOMMENT
                     logEdtEmail.text?.matches(emailPattern.toRegex()) != true -> Toast.makeText(context, "Invalid email address", Toast.LENGTH_SHORT).show()
 
                     else -> {
@@ -131,7 +131,8 @@ class LoginFragment : Fragment() {
                     startActivity(intentMain)
                     activity?.finish()
                 } else {
-                    Toast.makeText(context, user.message, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, user.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Email or password is wrongjni", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -148,7 +149,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding?.loadingLogin?.root?.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.loadingLogin.root.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     private fun showMessage(message: String) {

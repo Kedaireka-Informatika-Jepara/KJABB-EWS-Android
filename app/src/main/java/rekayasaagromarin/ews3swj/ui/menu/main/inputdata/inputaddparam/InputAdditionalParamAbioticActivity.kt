@@ -188,7 +188,7 @@ class InputAdditionalParamAbioticActivity : AppCompatActivity() {
                         rationCn = binding.edtInputAddRatio.text.toString().toDouble(),
                         turbidity = binding.edtInputAddTurbidity.text.toString().toDouble(),
                         sand = binding.edtInputAddSand.text.toString().toDouble(),
-                        clay = binding.edtInputAddClay.text.toString().toDouble(),
+                        clay = binding.edtInputAddClay.text.toString(),
                         silt = binding.edtInputAddSilt.text.toString().toDouble(),
                         stationId = station!!.stationId,
                         userId = station.userId

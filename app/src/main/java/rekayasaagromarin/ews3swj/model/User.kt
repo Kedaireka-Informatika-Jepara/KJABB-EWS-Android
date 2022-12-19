@@ -12,7 +12,7 @@ data class User(
     @field:SerializedName("email")
     val email: String = "",
 
-    @field:SerializedName("user_id")
+    @field:SerializedName("id")
     val userId: Int = 0,
 
     @field:SerializedName("role")

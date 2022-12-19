@@ -247,7 +247,7 @@ interface ApiService {
         @Field("conductivity") conductivity: Double,
         @Field("ratiocn") ratiocn: Double,
         @Field("turbidity") turbidity: Double,
-        @Field("clay") clay: Double,
+        @Field("clay") clay: String,
         @Field("sand") sand: Double,
         @Field("silt") silt: Double,
     ): Call<List<CountResponse>>
@@ -314,7 +314,7 @@ interface ApiService {
         @Field("conductivity") conductivity: Double,
         @Field("ratiocn") ratioCn: Double,
         @Field("turbidity") turbidity: Double,
-        @Field("clay") clay: Double,
+        @Field("clay") clay: String,
         @Field("sand") sand: Double,
         @Field("silt") silt: Double,
         @Field("station_id") stationId: String,
@@ -334,7 +334,7 @@ interface ApiService {
         @Field("conductivity") conductivity: Double,
         @Field("ratiocn") ratioCn: Double,
         @Field("turbidity") turbidity: Double,
-        @Field("clay") clay: Double,
+        @Field("clay") clay: String,
         @Field("sand") sand: Double,
         @Field("silt") silt: Double,
     ): Call<ResponseApi>

@@ -21,9 +21,10 @@ data class Result(
     @field:SerializedName("recommendation")
     val recommendation: String = "",
 
+    @field:SerializedName("station_id")
+    val stationId: String = "",
+
     @field:SerializedName("user_id")
     val userId: Int = 0,
 
-    @field:SerializedName("station_id")
-    val stationId: String = "",
 ) : Parcelable

@@ -66,12 +66,9 @@ class DetailStationActivity : AppCompatActivity() {
     private fun setDataDetailStation() {
         with(detailStationViewModel) {
             intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)?.let { setDataSpecies(it) }
-            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)
-                ?.let { setIndexAddStation(it) }
-            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)
-                ?.let { setMainAbioticStation(it) }
-            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)
-                ?.let { setResultStation(it) }
+            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)?.let { setIndexAddStation(it) }
+            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)?.let { setMainAbioticStation(it) }
+            intent.getStringExtra(DataStationFragment.EXTRA_STATION_ID)?.let { setResultStation(it) }
 
             isLoading.observe(this@DetailStationActivity) {
                 showLoading(it)
@@ -109,7 +106,7 @@ class DetailStationActivity : AppCompatActivity() {
             if (indexAdd != null) {
                 with(binding.viewDetailStationAbiotic) {
                     tvResultClay.text =
-                        if (indexAdd.wClay == 2.0) "Normal" else convertDecimal(indexAdd.clay)
+                        if (indexAdd.wClay == 2.0) "Normal" else indexAdd.clay
                     tvResultConductivity.text =
                         if (indexAdd.wConductivity == 2.0) "Normal" else convertDecimal(indexAdd.conductivity)
                     tvResultDiversity.text =
@@ -147,9 +144,7 @@ class DetailStationActivity : AppCompatActivity() {
                     tvResultSalinity.text =
                         if (mainAbiotic.wSalinity == 3.0) "Normal" else convertDecimal(mainAbiotic.salinity)
                     tvResultTemperature.text =
-                        if (mainAbiotic.wTemperature == 3.0) "Normal" else convertDecimal(
-                            mainAbiotic.temperature
-                        )
+                        if (mainAbiotic.wTemperature == 3.0) "Normal" else convertDecimal(mainAbiotic.temperature)
                 }
             } else {
                 finish()

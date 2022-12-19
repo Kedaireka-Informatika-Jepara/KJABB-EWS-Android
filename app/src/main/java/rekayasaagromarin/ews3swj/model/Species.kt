@@ -21,9 +21,9 @@ data class Species(
     @field:SerializedName("taxa_indicator")
     val taxaIndicator: Double = 0.00,
 
-    @field:SerializedName("user_id")
-    val userId: Int = 0,
-
     @field:SerializedName("station_id")
     val stationId: String = "",
+
+    @field:SerializedName("user_id")
+    val userId: Int = 0,
 ) : Parcelable
