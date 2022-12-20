@@ -73,11 +73,11 @@ class InputAdditionalParamAbioticActivity : AppCompatActivity() {
     private fun initEditField() {
         detailStationViewModel.getIndexAddStation().observe(this) {
             with(binding) {
-                edtInputAddConductivity.setText(it.conductivity.toString())
-                edtInputAddRatio.setText(it.rationCn.toString())
+                edtInputAddConductivity.setText(it.conductivity)
+                edtInputAddRatio.setText(it.rationCn)
                 edtInputAddTurbidity.setText(it.turbidity.toString())
-                edtInputAddSand.setText(it.sand.toString())
-                edtInputAddClay.setText(it.clay.toString())
+                edtInputAddSand.setText(it.sand)
+                edtInputAddClay.setText(it.clay)
                 edtInputAddSilt.setText(it.silt.toString())
             }
         }
@@ -184,10 +184,10 @@ class InputAdditionalParamAbioticActivity : AppCompatActivity() {
                         InputAdditionalParamBioticActivity.EXTRA_INDEX_ADD
                     )
                     val indexAddStation = indexAddBiotic?.copy(
-                        conductivity = binding.edtInputAddConductivity.text.toString().toDouble(),
-                        rationCn = binding.edtInputAddRatio.text.toString().toDouble(),
+                        conductivity = binding.edtInputAddConductivity.text.toString(),
+                        rationCn = binding.edtInputAddRatio.text.toString(),
                         turbidity = binding.edtInputAddTurbidity.text.toString().toDouble(),
-                        sand = binding.edtInputAddSand.text.toString().toDouble(),
+                        sand = binding.edtInputAddSand.text.toString(),
                         clay = binding.edtInputAddClay.text.toString(),
                         silt = binding.edtInputAddSilt.text.toString().toDouble(),
                         stationId = station!!.stationId,

@@ -108,16 +108,16 @@ class DetailStationActivity : AppCompatActivity() {
                     tvResultClay.text =
                         if (indexAdd.wClay == 2.0) "Normal" else indexAdd.clay
                     tvResultConductivity.text =
-                        if (indexAdd.wConductivity == 2.0) "Normal" else convertDecimal(indexAdd.conductivity)
+                        if (indexAdd.wConductivity == 2.0) "Normal" else indexAdd.conductivity
                     tvResultDiversity.text =
-                        if (indexAdd.wDiversity == 10.0) "Normal" else convertDecimal(indexAdd.diversity)
+                        if (indexAdd.wDiversity == 10.0) "Normal" else indexAdd.diversity
                     tvResultDominance.text =
-                        if (indexAdd.wDominance == 10.0) "Normal" else convertDecimal(indexAdd.dominance)
+                        if (indexAdd.wDominance == 10.0) "Normal" else indexAdd.dominance
                     tvResultNumSpecies.text = indexAdd.numberSpecies.toString()
                     tvResultRatio.text =
-                        if (indexAdd.wRationCn == 2.0) "Normal" else convertDecimal(indexAdd.rationCn)
+                        if (indexAdd.wRationCn == 2.0) "Normal" else indexAdd.rationCn
                     tvResultSand.text =
-                        if (indexAdd.wSand == 2.0) "Normal" else convertDecimal(indexAdd.sand)
+                        if (indexAdd.wSand == 2.0) "Normal" else indexAdd.sand
                     tvResultSilt.text =
                         if (indexAdd.wSilt == 2.0) "Normal" else convertDecimal(indexAdd.silt)
                     tvResultSimilarity.text =
@@ -138,11 +138,11 @@ class DetailStationActivity : AppCompatActivity() {
             if (mainAbiotic != null) {
                 with(binding.viewDetailStationAbiotic) {
                     tvResultDo.text =
-                        if (mainAbiotic.wDoParam == 3.0) "Normal" else convertDecimal(mainAbiotic.doParam)
+                        if (mainAbiotic.wDoParam == 3.0) "Normal" else mainAbiotic.doParam
                     tvResultPh.text =
-                        if (mainAbiotic.wPh == 3.0) "Normal" else convertDecimal(mainAbiotic.ph)
+                        if (mainAbiotic.wPh == 3.0) "Normal" else mainAbiotic.ph
                     tvResultSalinity.text =
-                        if (mainAbiotic.wSalinity == 3.0) "Normal" else convertDecimal(mainAbiotic.salinity)
+                        if (mainAbiotic.wSalinity == 3.0) "Normal" else mainAbiotic.salinity
                     tvResultTemperature.text =
                         if (mainAbiotic.wTemperature == 3.0) "Normal" else convertDecimal(mainAbiotic.temperature)
                 }

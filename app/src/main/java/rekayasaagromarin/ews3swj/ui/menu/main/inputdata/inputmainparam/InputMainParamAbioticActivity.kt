@@ -72,9 +72,9 @@ class InputMainParamAbioticActivity : AppCompatActivity() {
         detailStationViewModel.getMainAbioticStation().observe(this) {
             with(binding) {
                 edtInputMainTemperature.setText(it.temperature.toString())
-                edtInputMainSalinity.setText(it.salinity.toString())
-                edtInputMainDo.setText(it.doParam.toString())
-                edtInputMainPh.setText(it.ph.toString())
+                edtInputMainSalinity.setText(it.salinity)
+                edtInputMainDo.setText(it.doParam)
+                edtInputMainPh.setText(it.ph)
             }
         }
     }
@@ -156,10 +156,10 @@ class InputMainParamAbioticActivity : AppCompatActivity() {
                     val listSpecies =
                         intent.getParcelableArrayListExtra<Species>(InputMainParamBioticActivity.EXTRA_SPECIES)
                     val mainAbioticStation = MainAbioticStation(
-                        salinity = edtInputMainSalinity.text.toString().toDouble(),
+                        salinity = edtInputMainSalinity.text.toString(),
                         temperature = edtInputMainTemperature.text.toString().toDouble(),
-                        doParam = edtInputMainDo.text.toString().toDouble(),
-                        ph = edtInputMainPh.text.toString().toDouble(),
+                        doParam = edtInputMainDo.text.toString(),
+                        ph = edtInputMainPh.text.toString(),
                         typeOfWater = station!!.typeOfWaterId,
                         geographicalZone = station.geographicalZoneId,
                         userId = station.userId,

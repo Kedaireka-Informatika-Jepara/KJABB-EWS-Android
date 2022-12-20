@@ -16,13 +16,13 @@ data class IndexAddStation(
     val wSimilarity: Double = 0.0,
 
     @field:SerializedName("dominance")
-    val dominance: Double = 0.0,
+    val dominance: String = "",
 
     @field:SerializedName("bobot_dominance")
     val wDominance: Double = 0.0,
 
     @field:SerializedName("diversity")
-    val diversity: Double = 0.0,
+    val diversity: String = "",
 
     @field:SerializedName("bobot_diversity")
     val wDiversity: Double = 0.0,
@@ -46,13 +46,13 @@ data class IndexAddStation(
     val wTaxaIndicator: Double = 0.0,
 
     @field:SerializedName("conductivity")
-    val conductivity: Double = 0.0,
+    val conductivity: String = "",
 
     @field:SerializedName("bobot_conductivity")
     val wConductivity: Double = 0.0,
 
     @field:SerializedName("ratiocn")
-    val rationCn: Double = 0.0,
+    val rationCn: String = "",
 
     @field:SerializedName("bobot_ratiocn")
     val wRationCn: Double = 0.0,
@@ -64,7 +64,7 @@ data class IndexAddStation(
     val wTurbidity: Double = 0.0,
 
     @field:SerializedName("sand")
-    val sand: Double = 0.0,
+    val sand: String = "",
 
     @field:SerializedName("bobot_sand")
     val wSand: Double = 0.0,

@@ -10,7 +10,7 @@ data class MainAbioticStation(
     val id: Int = 0,
 
     @field:SerializedName("salinity")
-    val salinity: Double = 0.0,
+    val salinity: String = "",
 
     @field:SerializedName("bobot_salinity")
     val wSalinity: Double = 0.0,
@@ -22,13 +22,13 @@ data class MainAbioticStation(
     val wTemperature: Double = 0.0,
 
     @field:SerializedName("do")
-    val doParam: Double = 0.0,
+    val doParam: String = "",
 
     @field:SerializedName("bobot_do")
     val wDoParam: Double = 0.0,
 
     @field:SerializedName("ph")
-    val ph: Double = 0.0,
+    val ph: String = "",
 
     @field:SerializedName("bobot_ph")
     val wPh: Double = 0.0,

@@ -220,15 +220,15 @@ class ResultActivity : AppCompatActivity() {
         with(binding.viewAbiotic) {
             if (indexAdd != null && main != null) {
                 tvResultClay.text = indexAdd.clay
-                tvResultConductivity.text = convertDecimal(indexAdd.conductivity)
-                tvResultDo.text = convertDecimal(main.doParam)
-                tvResultDiversity.text = convertDecimal(indexAdd.diversity)
-                tvResultDominance.text = convertDecimal(indexAdd.dominance)
+                tvResultConductivity.text = indexAdd.conductivity
+                tvResultDo.text = main.doParam
+                tvResultDiversity.text = indexAdd.diversity
+                tvResultDominance.text = indexAdd.dominance
                 tvResultNumSpecies.text = indexAdd.numberSpecies.toString()
-                tvResultPh.text = convertDecimal(main.ph)
-                tvResultRatio.text = convertDecimal(indexAdd.rationCn)
-                tvResultSalinity.text = convertDecimal(main.salinity)
-                tvResultSand.text = convertDecimal(indexAdd.sand)
+                tvResultPh.text = main.ph
+                tvResultRatio.text = indexAdd.rationCn
+                tvResultSalinity.text = main.salinity
+                tvResultSand.text = indexAdd.sand
                 tvResultSilt.text = convertDecimal(indexAdd.silt)
                 tvResultSimilarity.text = convertDecimal(indexAdd.similarity)
                 tvResultTemperature.text = convertDecimal(main.temperature)

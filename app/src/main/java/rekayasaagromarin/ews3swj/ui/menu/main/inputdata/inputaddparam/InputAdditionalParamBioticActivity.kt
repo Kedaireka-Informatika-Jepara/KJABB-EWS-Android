@@ -83,8 +83,8 @@ class InputAdditionalParamBioticActivity : AppCompatActivity() {
         detailStationViewModel.getIndexAddStation().observe(this) {
             with(binding) {
                 edtInputAddSimilarity.setText(it.similarity.toString())
-                edtInputAddDominance.setText(it.dominance.toString())
-                edtInputAddDiversity.setText(it.diversity.toString())
+                edtInputAddDominance.setText(it.dominance)
+                edtInputAddDiversity.setText(it.diversity)
             }
         }
     }
@@ -214,8 +214,8 @@ class InputAdditionalParamBioticActivity : AppCompatActivity() {
                         intent.getParcelableExtra<MainAbioticStation>(InputMainParamAbioticActivity.EXTRA_MAIN_ABIOTIC)
                     val indexAddStation = IndexAddStation(
                         similarity = edtInputAddSimilarity.text.toString().toDouble(),
-                        dominance = edtInputAddDominance.text.toString().toDouble(),
-                        diversity = edtInputAddDiversity.text.toString().toDouble(),
+                        dominance = edtInputAddDominance.text.toString(),
+                        diversity = edtInputAddDiversity.text.toString(),
                         numberSpecies = edtInputAddSumSpecies.text.toString().toInt(),
                         totalAbundance = edtInputAddSumAbundance.text.toString().toDouble(),
                         taxaIndicator = edtInputAddIndicatorTaxa.text.toString().toDouble()

@@ -234,8 +234,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("/api/v1/input_data/index_biotic/count")
     fun indexBioticCount(
-        @Field("diversity") diversity: Double,
-        @Field("dominance") dominance: Double,
+        @Field("diversity") diversity: String,
+        @Field("dominance") dominance: String,
         @Field("similarity") similarity: Double,
         @Field("number_species") numberSpecies: Int,
         @Field("total_abundance") numberAbundance: Double,
@@ -244,11 +244,11 @@ interface ApiService {
     @FormUrlEncoded
     @POST("/api/v1/input_data/additional_abiotic/count")
     fun additionalAbioticCount(
-        @Field("conductivity") conductivity: Double,
-        @Field("ratiocn") ratiocn: Double,
+        @Field("conductivity") conductivity: String,
+        @Field("ratiocn") ratiocn: String,
         @Field("turbidity") turbidity: Double,
         @Field("clay") clay: String,
-        @Field("sand") sand: Double,
+        @Field("sand") sand: String,
         @Field("silt") silt: Double,
     ): Call<List<CountResponse>>
 
@@ -256,9 +256,9 @@ interface ApiService {
     @POST("/api/v1/input_data/main_abiotic/count")
     fun mainAbioticCount(
         @Field("temperature") temperature: Double,
-        @Field("salinity") salinity: Double,
-        @Field("do") doParam: Double,
-        @Field("ph") ph: Double,
+        @Field("salinity") salinity: String,
+        @Field("do") doParam: String,
+        @Field("ph") ph: String,
         @Field("type_of_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
     ): Call<List<CountResponse>>
@@ -306,16 +306,16 @@ interface ApiService {
     @POST("/api/v1/input_data/index_add_station/save")
     fun saveIndexAddStation(
         @Field("similarity") similarity: Double,
-        @Field("dominance") dominance: Double,
-        @Field("diversity") diversity: Double,
+        @Field("dominance") dominance: String,
+        @Field("diversity") diversity: String,
         @Field("total_abundance") totalAbundance: Double,
         @Field("number_species") numberSpecies: Int,
         @Field("taxa_indicator") taxaIndicator: Double,
-        @Field("conductivity") conductivity: Double,
-        @Field("ratiocn") ratioCn: Double,
+        @Field("conductivity") conductivity: String,
+        @Field("ratiocn") ratioCn: String,
         @Field("turbidity") turbidity: Double,
         @Field("clay") clay: String,
-        @Field("sand") sand: Double,
+        @Field("sand") sand: String,
         @Field("silt") silt: Double,
         @Field("station_id") stationId: String,
         @Field("user_id") userId: Int,
@@ -326,16 +326,16 @@ interface ApiService {
     fun editIndexAddStation(
         @Path("station_id") stationId: String,
         @Field("similarity") similarity: Double,
-        @Field("dominance") dominance: Double,
-        @Field("diversity") diversity: Double,
+        @Field("dominance") dominance: String,
+        @Field("diversity") diversity: String,
         @Field("total_abundance") totalAbundance: Double,
         @Field("number_species") numberSpecies: Int,
         @Field("taxa_indicator") taxaIndicator: Double,
-        @Field("conductivity") conductivity: Double,
-        @Field("ratiocn") ratioCn: Double,
+        @Field("conductivity") conductivity: String,
+        @Field("ratiocn") ratioCn: String,
         @Field("turbidity") turbidity: Double,
         @Field("clay") clay: String,
-        @Field("sand") sand: Double,
+        @Field("sand") sand: String,
         @Field("silt") silt: Double,
     ): Call<ResponseApi>
 
@@ -343,9 +343,9 @@ interface ApiService {
     @POST("/api/v1/input_data/main_station/save")
     fun saveMainStation(
         @Field("temperature") temperature: Double,
-        @Field("salinity") salinity: Double,
-        @Field("do") doParam: Double,
-        @Field("ph") ph: Double,
+        @Field("salinity") salinity: String,
+        @Field("do") doParam: String,
+        @Field("ph") ph: String,
         @Field("type_of_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
         @Field("station_id") stationId: String,
@@ -357,9 +357,9 @@ interface ApiService {
     fun editMainStation(
         @Path("station_id") stationId: String,
         @Field("temperature") temperature: Double,
-        @Field("salinity") salinity: Double,
-        @Field("do") doParam: Double,
-        @Field("ph") ph: Double,
+        @Field("salinity") salinity: String,
+        @Field("do") doParam: String,
+        @Field("ph") ph: String,
         @Field("type_of_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
     ): Call<ResponseApi>
