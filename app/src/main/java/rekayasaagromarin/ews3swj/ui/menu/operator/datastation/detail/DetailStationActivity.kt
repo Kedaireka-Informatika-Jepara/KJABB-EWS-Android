@@ -119,12 +119,12 @@ class DetailStationActivity : AppCompatActivity() {
                     tvResultSand.text =
                         if (indexAdd.wSand == 2.0) "Normal" else indexAdd.sand
                     tvResultSilt.text =
-                        if (indexAdd.wSilt == 2.0) "Normal" else convertDecimal(indexAdd.silt)
+                        if (indexAdd.wSilt == 2.0) "Normal" else indexAdd.silt
                     tvResultSimilarity.text =
-                        if (indexAdd.wSimilarity == 10.0) "Normal" else convertDecimal(indexAdd.similarity)
+                        if (indexAdd.wSimilarity == 10.0) "Normal" else indexAdd.similarity
                     tvResultAbundance.text = convertDecimal(indexAdd.totalAbundance)
                     tvResultTurbidity.text =
-                        if (indexAdd.wTurbidity == 2.0) "Normal" else convertDecimal(indexAdd.turbidity)
+                        if (indexAdd.wTurbidity == 2.0) "Normal" else indexAdd.turbidity
                     tvResultIndicatorTaxa.text = convertDecimal(indexAdd.taxaIndicator)
                 }
             } else {
@@ -144,7 +144,7 @@ class DetailStationActivity : AppCompatActivity() {
                     tvResultSalinity.text =
                         if (mainAbiotic.wSalinity == 3.0) "Normal" else mainAbiotic.salinity
                     tvResultTemperature.text =
-                        if (mainAbiotic.wTemperature == 3.0) "Normal" else convertDecimal(mainAbiotic.temperature)
+                        if (mainAbiotic.wTemperature == 3.0) "Normal" else mainAbiotic.temperature
                 }
             } else {
                 finish()

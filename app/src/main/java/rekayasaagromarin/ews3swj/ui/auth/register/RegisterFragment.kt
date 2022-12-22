@@ -108,7 +108,8 @@ class RegisterFragment : Fragment() {
                             name = regEdtName.text.toString(),
                             email = regEdtEmail.text.toString(),
                             password = regEdtPassword.text.toString(),
-                            membershipId = membershipId
+                            membershipId = membershipId,
+                            image = "default.jpg"
                         )
 
                         registerViewModel.registerUser(

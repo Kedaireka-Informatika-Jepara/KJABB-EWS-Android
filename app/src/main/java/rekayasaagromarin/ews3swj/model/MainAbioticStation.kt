@@ -16,7 +16,7 @@ data class MainAbioticStation(
     val wSalinity: Double = 0.0,
 
     @field:SerializedName("temperature")
-    val temperature: Double = 0.0,
+    val temperature: String = "",
 
     @field:SerializedName("bobot_temperature")
     val wTemperature: Double = 0.0,

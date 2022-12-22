@@ -17,13 +17,12 @@ class MainViewModel : ViewModel() {
         client.enqueue(object : Callback<List<User>>{
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 if(response.isSuccessful){
-                    user.postValue(response.body()?.get(0))
+                    user.postValue(response.body()?.get(0) ?: User())
                 }
             }
 
             override fun onFailure(call: Call<List<User>>, t: Throwable) {
             }
-
         })
     }
 

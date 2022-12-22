@@ -6,6 +6,6 @@ data class TypeOfWater(
     @field:SerializedName("id")
     val id: Int = 0,
 
-    @field:SerializedName("name")
+    @field:SerializedName("water")
     val name: String = "",
 )

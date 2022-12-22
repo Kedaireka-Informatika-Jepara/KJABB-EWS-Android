@@ -131,8 +131,8 @@ class LoginFragment : Fragment() {
                     startActivity(intentMain)
                     activity?.finish()
                 } else {
-//                    Toast.makeText(context, user.message, Toast.LENGTH_SHORT).show()
-                    Toast.makeText(context, "Email or password is wrongjni", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, user.message, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, "Email or password is wrongjni", Toast.LENGTH_SHORT).show()
                 }
             }
 

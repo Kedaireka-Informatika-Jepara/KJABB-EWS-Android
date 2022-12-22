@@ -82,7 +82,7 @@ class InputAdditionalParamBioticActivity : AppCompatActivity() {
     private fun initEditField() {
         detailStationViewModel.getIndexAddStation().observe(this) {
             with(binding) {
-                edtInputAddSimilarity.setText(it.similarity.toString())
+                edtInputAddSimilarity.setText(it.similarity)
                 edtInputAddDominance.setText(it.dominance)
                 edtInputAddDiversity.setText(it.diversity)
             }
@@ -213,7 +213,7 @@ class InputAdditionalParamBioticActivity : AppCompatActivity() {
                     val mainAbioticStation =
                         intent.getParcelableExtra<MainAbioticStation>(InputMainParamAbioticActivity.EXTRA_MAIN_ABIOTIC)
                     val indexAddStation = IndexAddStation(
-                        similarity = edtInputAddSimilarity.text.toString().toDouble(),
+                        similarity = edtInputAddSimilarity.text.toString(),
                         dominance = edtInputAddDominance.text.toString(),
                         diversity = edtInputAddDiversity.text.toString(),
                         numberSpecies = edtInputAddSumSpecies.text.toString().toInt(),

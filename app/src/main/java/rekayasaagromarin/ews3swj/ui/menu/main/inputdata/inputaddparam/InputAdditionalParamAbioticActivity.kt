@@ -75,10 +75,10 @@ class InputAdditionalParamAbioticActivity : AppCompatActivity() {
             with(binding) {
                 edtInputAddConductivity.setText(it.conductivity)
                 edtInputAddRatio.setText(it.rationCn)
-                edtInputAddTurbidity.setText(it.turbidity.toString())
+                edtInputAddTurbidity.setText(it.turbidity)
                 edtInputAddSand.setText(it.sand)
                 edtInputAddClay.setText(it.clay)
-                edtInputAddSilt.setText(it.silt.toString())
+                edtInputAddSilt.setText(it.silt)
             }
         }
     }
@@ -186,10 +186,10 @@ class InputAdditionalParamAbioticActivity : AppCompatActivity() {
                     val indexAddStation = indexAddBiotic?.copy(
                         conductivity = binding.edtInputAddConductivity.text.toString(),
                         rationCn = binding.edtInputAddRatio.text.toString(),
-                        turbidity = binding.edtInputAddTurbidity.text.toString().toDouble(),
+                        turbidity = binding.edtInputAddTurbidity.text.toString(),
                         sand = binding.edtInputAddSand.text.toString(),
                         clay = binding.edtInputAddClay.text.toString(),
-                        silt = binding.edtInputAddSilt.text.toString().toDouble(),
+                        silt = binding.edtInputAddSilt.text.toString(),
                         stationId = station!!.stationId,
                         userId = station.userId
                     )

@@ -236,7 +236,7 @@ interface ApiService {
     fun indexBioticCount(
         @Field("diversity") diversity: String,
         @Field("dominance") dominance: String,
-        @Field("similarity") similarity: Double,
+        @Field("similarity") similarity: String,
         @Field("number_species") numberSpecies: Int,
         @Field("total_abundance") numberAbundance: Double,
     ): Call<List<CountResponse>>
@@ -246,16 +246,16 @@ interface ApiService {
     fun additionalAbioticCount(
         @Field("conductivity") conductivity: String,
         @Field("ratiocn") ratiocn: String,
-        @Field("turbidity") turbidity: Double,
+        @Field("turbidity") turbidity: String,
         @Field("clay") clay: String,
         @Field("sand") sand: String,
-        @Field("silt") silt: Double,
+        @Field("silt") silt: String,
     ): Call<List<CountResponse>>
 
     @FormUrlEncoded
     @POST("/api/v1/input_data/main_abiotic/count")
     fun mainAbioticCount(
-        @Field("temperature") temperature: Double,
+        @Field("temperature") temperature: String,
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,
@@ -305,7 +305,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("/api/v1/input_data/index_add_station/save")
     fun saveIndexAddStation(
-        @Field("similarity") similarity: Double,
+        @Field("similarity") similarity: String,
         @Field("dominance") dominance: String,
         @Field("diversity") diversity: String,
         @Field("total_abundance") totalAbundance: Double,
@@ -313,10 +313,10 @@ interface ApiService {
         @Field("taxa_indicator") taxaIndicator: Double,
         @Field("conductivity") conductivity: String,
         @Field("ratiocn") ratioCn: String,
-        @Field("turbidity") turbidity: Double,
+        @Field("turbidity") turbidity: String,
         @Field("clay") clay: String,
         @Field("sand") sand: String,
-        @Field("silt") silt: Double,
+        @Field("silt") silt: String,
         @Field("station_id") stationId: String,
         @Field("user_id") userId: Int,
     ): Call<ResponseApi>
@@ -325,7 +325,7 @@ interface ApiService {
     @POST("/api/v1/input_history/index_add/edit/{station_id}")
     fun editIndexAddStation(
         @Path("station_id") stationId: String,
-        @Field("similarity") similarity: Double,
+        @Field("similarity") similarity: String,
         @Field("dominance") dominance: String,
         @Field("diversity") diversity: String,
         @Field("total_abundance") totalAbundance: Double,
@@ -333,16 +333,16 @@ interface ApiService {
         @Field("taxa_indicator") taxaIndicator: Double,
         @Field("conductivity") conductivity: String,
         @Field("ratiocn") ratioCn: String,
-        @Field("turbidity") turbidity: Double,
+        @Field("turbidity") turbidity: String,
         @Field("clay") clay: String,
         @Field("sand") sand: String,
-        @Field("silt") silt: Double,
+        @Field("silt") silt: String,
     ): Call<ResponseApi>
 
     @FormUrlEncoded
     @POST("/api/v1/input_data/main_station/save")
     fun saveMainStation(
-        @Field("temperature") temperature: Double,
+        @Field("temperature") temperature: String,
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,
@@ -356,7 +356,7 @@ interface ApiService {
     @POST("/api/v1/input_history/main_abiotic/edit/{station_id}")
     fun editMainStation(
         @Path("station_id") stationId: String,
-        @Field("temperature") temperature: Double,
+        @Field("temperature") temperature: String,
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,

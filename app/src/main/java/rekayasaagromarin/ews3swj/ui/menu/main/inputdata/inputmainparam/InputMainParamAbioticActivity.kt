@@ -71,7 +71,7 @@ class InputMainParamAbioticActivity : AppCompatActivity() {
     private fun initEditField() {
         detailStationViewModel.getMainAbioticStation().observe(this) {
             with(binding) {
-                edtInputMainTemperature.setText(it.temperature.toString())
+                edtInputMainTemperature.setText(it.temperature)
                 edtInputMainSalinity.setText(it.salinity)
                 edtInputMainDo.setText(it.doParam)
                 edtInputMainPh.setText(it.ph)
@@ -157,7 +157,7 @@ class InputMainParamAbioticActivity : AppCompatActivity() {
                         intent.getParcelableArrayListExtra<Species>(InputMainParamBioticActivity.EXTRA_SPECIES)
                     val mainAbioticStation = MainAbioticStation(
                         salinity = edtInputMainSalinity.text.toString(),
-                        temperature = edtInputMainTemperature.text.toString().toDouble(),
+                        temperature = edtInputMainTemperature.text.toString(),
                         doParam = edtInputMainDo.text.toString(),
                         ph = edtInputMainPh.text.toString(),
                         typeOfWater = station!!.typeOfWaterId,

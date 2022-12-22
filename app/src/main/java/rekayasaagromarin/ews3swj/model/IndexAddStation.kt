@@ -10,7 +10,7 @@ data class IndexAddStation(
     val id: Int = 0,
 
     @field:SerializedName("similarity")
-    val similarity: Double = 0.0,
+    val similarity: String = "",
 
     @field:SerializedName("bobot_similarity")
     val wSimilarity: Double = 0.0,
@@ -58,7 +58,7 @@ data class IndexAddStation(
     val wRationCn: Double = 0.0,
 
     @field:SerializedName("turbidity")
-    val turbidity: Double = 0.0,
+    val turbidity: String = "",
 
     @field:SerializedName("bobot_turbidity")
     val wTurbidity: Double = 0.0,
@@ -79,7 +79,7 @@ data class IndexAddStation(
     val wClay: Double = 0.0,
 
     @field:SerializedName("silt")
-    val silt: Double = 0.0,
+    val silt: String = "",
 
     @field:SerializedName("bobot_silt")
     val wSilt: Double = 0.0,

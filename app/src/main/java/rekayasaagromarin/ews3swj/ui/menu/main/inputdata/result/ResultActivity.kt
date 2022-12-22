@@ -229,11 +229,11 @@ class ResultActivity : AppCompatActivity() {
                 tvResultRatio.text = indexAdd.rationCn
                 tvResultSalinity.text = main.salinity
                 tvResultSand.text = indexAdd.sand
-                tvResultSilt.text = convertDecimal(indexAdd.silt)
-                tvResultSimilarity.text = convertDecimal(indexAdd.similarity)
-                tvResultTemperature.text = convertDecimal(main.temperature)
+                tvResultSilt.text = indexAdd.silt
+                tvResultSimilarity.text = indexAdd.similarity
+                tvResultTemperature.text = main.temperature
                 tvResultAbundance.text = convertDecimal(indexAdd.totalAbundance)
-                tvResultTurbidity.text = convertDecimal(indexAdd.turbidity)
+                tvResultTurbidity.text = indexAdd.turbidity
                 tvResultIndicatorTaxa.text = convertDecimal(indexAdd.taxaIndicator)
             }
         }
