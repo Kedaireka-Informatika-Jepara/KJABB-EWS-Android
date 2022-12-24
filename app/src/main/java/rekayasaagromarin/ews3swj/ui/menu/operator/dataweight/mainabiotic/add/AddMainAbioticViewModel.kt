@@ -3,16 +3,14 @@ package rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.mainabiotic.add
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import rekayasaagromarin.ews3swj.model.GeographicalZone
-import rekayasaagromarin.ews3swj.model.MainAbiotic
-import rekayasaagromarin.ews3swj.model.ResponseApi
-import rekayasaagromarin.ews3swj.model.TypeOfWater
+import rekayasaagromarin.ews3swj.model.*
 import rekayasaagromarin.ews3swj.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class AddMainAbioticViewModel : ViewModel() {
+    private var listParamMainAbiotic = MutableLiveData<ArrayList<String>>()
     private var listGeoZone = MutableLiveData<ArrayList<String>>()
     private var listWater = MutableLiveData<ArrayList<String>>()
 
@@ -66,7 +64,7 @@ class AddMainAbioticViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            geographicalZone.add(it.name)
+                            geographicalZone.add(it.zone)
                         }
                         listGeoZone.postValue(geographicalZone)
                     }
@@ -81,8 +79,42 @@ class AddMainAbioticViewModel : ViewModel() {
         })
     }
 
+    fun setParamMainAbiotic(){
+        _isLoading.value = true
+        val paramMainAbiotic = ArrayList<String>()
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
+            override fun onResponse(
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
+            ) {
+                if (response.isSuccessful) {
+                    _isLoading.value = false
+                    val roleList = response.body()
+                    if (roleList != null) {
+                        roleList.forEach {
+                            if (it.type == 2){
+                                paramMainAbiotic.add(it.name)
+                            }
+                        }
+                        listParamMainAbiotic.postValue(paramMainAbiotic)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
+                _message.value = t.message
+                _isLoading.value = false
+            }
+        })
+    }
+
     fun getGeographicalZone(): LiveData<ArrayList<String>> {
         return listGeoZone
+    }
+
+    fun getParamMainAbiotic(): LiveData<ArrayList<String>> {
+        return listParamMainAbiotic
     }
 
     fun setTypeOfWater() {

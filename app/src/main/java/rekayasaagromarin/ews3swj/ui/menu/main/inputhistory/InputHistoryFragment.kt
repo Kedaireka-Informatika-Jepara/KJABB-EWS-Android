@@ -69,6 +69,7 @@ class InputHistoryFragment : Fragment() {
         inputHistoryViewModel.getListTaxaIndicator()
             .observe(viewLifecycleOwner) { listTaxaIndicator ->
                 listTaxaIndicator?.let {
+//                    Toast.makeText(context, it.toString(), Toast.LENGTH_SHORT).show()
                     if (listTaxaIndicator.isNotEmpty()) {
                         taxaIndicatorAdapter.setTaxaIndicator(listTaxaIndicator)
                         with(binding) {

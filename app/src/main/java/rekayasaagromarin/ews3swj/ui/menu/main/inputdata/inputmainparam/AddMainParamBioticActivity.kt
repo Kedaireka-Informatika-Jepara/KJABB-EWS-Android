@@ -137,7 +137,7 @@ class AddMainParamBioticActivity : AppCompatActivity() {
                             val species = Species(
                                 species = edtInputMainSpecies.text.toString(),
                                 family = this@AddMainParamBioticActivity.family,
-                                abundance = edtInputMainAbundance.text.toString().toDouble(),
+                                abundance = edtInputMainAbundance.text.toString().toInt(),
                                 userId = station!!.userId,
                                 stationId = station.stationId,
                                 taxaIndicator = taxaIndicator

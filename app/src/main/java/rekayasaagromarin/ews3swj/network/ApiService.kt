@@ -145,7 +145,19 @@ interface ApiService {
     @GET("/api/v1/geographical_zone")
     fun getGeographicalZone(): Call<List<GeographicalZone>>
 
-    @GET("/api/v1/type_of_water")
+    @GET("/api/v1/parameter")
+    fun getParameter(): Call<List<Parameter>>
+
+//    add parameter
+    @FormUrlEncoded
+    @POST("/api/v1/parameter/add")
+    fun addParameter(
+        @Field("name") name: String,
+        @Field("type") type: Int,
+        @Field("description") description: String
+    ): Call<ResponseApi>
+
+    @GET("/api/v1/type_water")
     fun getTypeOfWater(): Call<List<TypeOfWater>>
 
     @FormUrlEncoded
@@ -153,7 +165,7 @@ interface ApiService {
     fun addMainAbiotic(
         @Field("name") name: String,
         @Field("geographical_zone_id") geographicalZone: Int,
-        @Field("type_of_water_id") typeOfWater: Int,
+        @Field("type_water_id") typeOfWater: Int,
         @Field("nilai_awal") initialValue: Double,
         @Field("nilai_akhir") finalValue: Double,
         @Field("bobot") weight: Double,
@@ -165,7 +177,7 @@ interface ApiService {
         @Path("id") id: Int,
         @Field("name") name: String,
         @Field("geographical_zone_id") geographicalZoneId: Int,
-        @Field("type_of_water_id") typeOfWaterId: Int,
+        @Field("type_water_id") typeOfWaterId: Int,
         @Field("nilai_awal") initialValue: Double,
         @Field("nilai_akhir") finalValue: Double,
         @Field("bobot") weight: Double,
@@ -259,7 +271,7 @@ interface ApiService {
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,
-        @Field("type_of_water") typeOfWater: Int,
+        @Field("type_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
     ): Call<List<CountResponse>>
 
@@ -273,7 +285,7 @@ interface ApiService {
     @POST("/api/v1/input_data/station/save")
     fun saveStation(
         @Field("station_id") stationId: String,
-        @Field("type_of_water") typeOfWater: Int,
+        @Field("type_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
         @Field("user_id") userId: Int,
     ): Call<ResponseApi>
@@ -282,7 +294,7 @@ interface ApiService {
     @POST("/api/v1/input_history/station/edit/{station_id}")
     fun editStation(
         @Path("station_id") stationId: String,
-        @Field("type_of_water") typeOfWater: Int,
+        @Field("type_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
     ): Call<ResponseApi>
 
@@ -291,7 +303,7 @@ interface ApiService {
     fun saveSpecies(
         @Field("family") family: String,
         @Field("species") species: String,
-        @Field("abundance") abundance: Double,
+        @Field("abundance") abundance: Int,
         @Field("taxa_indicator") taxaIndicator: Double,
         @Field("user_id") userId: Int,
         @Field("station_id") stationId: String,
@@ -346,7 +358,7 @@ interface ApiService {
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,
-        @Field("type_of_water") typeOfWater: Int,
+        @Field("type_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
         @Field("station_id") stationId: String,
         @Field("user_id") userId: Int,
@@ -360,7 +372,7 @@ interface ApiService {
         @Field("salinity") salinity: String,
         @Field("do") doParam: String,
         @Field("ph") ph: String,
-        @Field("type_of_water") typeOfWater: Int,
+        @Field("type_water") typeOfWater: Int,
         @Field("geographical_zone") geographicalZone: Int,
     ): Call<ResponseApi>
 

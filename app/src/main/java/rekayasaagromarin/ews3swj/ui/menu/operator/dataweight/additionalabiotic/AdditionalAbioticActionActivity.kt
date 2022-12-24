@@ -152,8 +152,6 @@ class AdditionalAbioticActionActivity : AppCompatActivity(), View.OnClickListene
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_additional_abiotic_edit -> {
-                val intentEditAdditionalAbiotic =
-                    Intent(this, EditAdditionalAbioticActivity::class.java)
                 val additionalAbiotic = AdditionalAbiotic(
                     id = binding.tvAdditionalAbioticId.text.toString().toInt(),
                     name = binding.tvAdditionalAbioticName.text.toString(),
@@ -161,6 +159,8 @@ class AdditionalAbioticActionActivity : AppCompatActivity(), View.OnClickListene
                     finalValue = binding.tvAdditionalAbioticFinal.text.toString().toDouble(),
                     weight = binding.tvAdditionalAbioticWeight.text.toString().toDouble()
                 )
+                val intentEditAdditionalAbiotic =
+                    Intent(this, EditAdditionalAbioticActivity::class.java)
                 intentEditAdditionalAbiotic.putExtra(EXTRA_ADDITIONAL, additionalAbiotic)
                 startActivity(intentEditAdditionalAbiotic)
             }

@@ -1,5 +1,6 @@
 package rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.indexbiotic.add
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.activity.viewModels
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityAddIndexBioticBinding
 import rekayasaagromarin.ews3swj.model.IndexBiotic
+import rekayasaagromarin.ews3swj.ui.parameter.AddParameterActivity
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment
 
 class AddIndexBioticActivity : AppCompatActivity() {
@@ -39,11 +41,27 @@ class AddIndexBioticActivity : AppCompatActivity() {
     }
 
     private fun initParameterName() {
-        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+        val listParameter = arrayListOf<String>()
+        with(addIndexBioticViewModel) {
+            setParamIndexBiotic()
+            getParamIndexBiotic().observe(this@AddIndexBioticActivity) { list ->
+                listParameter.clear()
+                listParameter.addAll(list)
+            }
+        }
+
+//        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+//            baseContext,
+//            R.array.index_biotic_param,
+//            R.layout.item_text,
+//        )
+
+        val spinnerArrayAdapter = ArrayAdapter(
             baseContext,
-            R.array.index_biotic_param,
             R.layout.item_text,
+            listParameter,
         )
+
         (binding.tilAddIndexParam.editText as? AutoCompleteTextView)?.setAdapter(
             spinnerArrayAdapter
         )
@@ -55,8 +73,18 @@ class AddIndexBioticActivity : AppCompatActivity() {
     }
 
     private fun actionButton() {
+        addParameterBiotic()
         addIndexBiotic()
         backButton()
+    }
+
+    private fun addParameterBiotic() {
+        binding.btnAddParameterIndexBiotic.setOnClickListener {
+            intent = Intent(this, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 1)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun addIndexBiotic() {

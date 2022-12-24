@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.parameter.AddParameterActivity">
+
+    <include
+        android:id="@+id/action_add_parameter_toolbar"
+        layout="@layout/view_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_cek_intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CEK INTENT"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_add_parameter_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--        add textfield-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_add_parameter_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_add_parameter_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/parameter_name"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--        add textfield description-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_add_parameter_description"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:hintTextAppearance="@style/Text.Regular.UserLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_add_parameter_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="parameter description"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/btn_add_parameter_cancel"
+                style="@style/Button.Action"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/silver"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/btn_add_parameter_add"
+                style="@style/Button.Action"
+                android:layout_marginStart="8dp"
+                android:layout_weight="0.5"
+                android:backgroundTint="@color/caribbean_green"
+                android:text="@string/add" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/loading_add_additional"
+            layout="@layout/view_loading"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

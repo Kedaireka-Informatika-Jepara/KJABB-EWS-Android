@@ -45,7 +45,7 @@ class InputStationViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            geographicalZone.add(it.name)
+                            geographicalZone.add(it.zone)
                         }
                         geographicalZone.removeLast()
                         listGeoZone.postValue(geographicalZone)

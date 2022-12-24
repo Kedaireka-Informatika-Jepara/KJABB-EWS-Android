@@ -38,11 +38,16 @@ class InputStationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initGeographicalZone()
-        initTypeOfWater()
 
         binding.btnInputStationProceed.setOnClickListener { proceed() }
         nextInput()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        initGeographicalZone()
+        initTypeOfWater()
     }
 
     private fun nextInput() {
@@ -214,6 +219,16 @@ class InputStationFragment : Fragment() {
                 edtInputStationId.setText("")
             }
             isFinish = false
+        }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        with(binding) {
+            dropdownInputStationZone.setText("")
+            dropdownInputStationWater.setText("")
+            edtInputStationId.setText("")
         }
     }
 

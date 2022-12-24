@@ -36,13 +36,20 @@ class DataWeightFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDataWeightBinding.inflate(inflater, container, false)
+
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        initTypeOfParameter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initTypeOfParameter()
+//        initTypeOfParameter()
         initAddWeight()
     }
 
@@ -253,6 +260,12 @@ class DataWeightFragment : Fragment() {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+
+        binding.tilTypeOfParam.editText?.setText("")
+        binding.dropdownTypeOfParam.setText("")
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -261,6 +274,7 @@ class DataWeightFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
         if (isUpdateItem) {
             when (param) {
                 0 -> {

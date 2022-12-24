@@ -45,7 +45,7 @@ class SpeciesAdapter(private val isEnableDelete : Boolean) : RecyclerView.Adapte
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemSpeciesBinding.bind(itemView)
         fun bind(species: Species) {
-            val abundance = convertDecimal(species.abundance)
+            val abundance = species.abundance
 
             with(binding) {
                 tvItemSpecies.text = species.species

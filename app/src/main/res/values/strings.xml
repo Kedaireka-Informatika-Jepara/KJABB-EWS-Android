@@ -171,7 +171,7 @@
     <string-array name="additional_abiotic_param">
         <item>Clay</item>
         <item>Conductivity</item>
-        <item>Turbidity</item>
+        <item>Kekeruhan</item>
         <item>Ratio CN</item>
         <item>Sand</item>
         <item>Silt</item>

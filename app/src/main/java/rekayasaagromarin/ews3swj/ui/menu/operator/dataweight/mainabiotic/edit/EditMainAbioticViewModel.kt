@@ -67,7 +67,7 @@ class EditMainAbioticViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            geographicalZone.add(it.name)
+                            geographicalZone.add(it.zone)
                         }
                         listGeoZone.postValue(geographicalZone)
                     }

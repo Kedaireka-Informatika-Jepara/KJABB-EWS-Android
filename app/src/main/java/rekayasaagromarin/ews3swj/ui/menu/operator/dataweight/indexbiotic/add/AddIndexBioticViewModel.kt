@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import rekayasaagromarin.ews3swj.model.IndexBiotic
+import rekayasaagromarin.ews3swj.model.Parameter
 import rekayasaagromarin.ews3swj.model.ResponseApi
 import rekayasaagromarin.ews3swj.network.ApiConfig
 import retrofit2.Call
@@ -11,6 +12,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AddIndexBioticViewModel : ViewModel() {
+    private var listParamIndexBiotic = MutableLiveData<ArrayList<String>>()
+
     private val _message = MutableLiveData<String>()
     val message: LiveData<String> = _message
 
@@ -19,6 +22,40 @@ class AddIndexBioticViewModel : ViewModel() {
 
     private val _isSuccess = MutableLiveData<Int>()
     val isSuccess: LiveData<Int> = _isSuccess
+
+    fun setParamIndexBiotic(){
+        _isLoading.value = true
+        val paramIndexBiotic = ArrayList<String>()
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
+            override fun onResponse(
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
+            ) {
+                if (response.isSuccessful) {
+                    _isLoading.value = false
+                    val roleList = response.body()
+                    if (roleList != null) {
+                        roleList.forEach {
+                            if (it.type == 1){
+                                paramIndexBiotic.add(it.name)
+                            }
+                        }
+                        listParamIndexBiotic.postValue(paramIndexBiotic)
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
+                _message.value = t.message
+                _isLoading.value = false
+            }
+        })
+    }
+
+    fun getParamIndexBiotic(): LiveData<ArrayList<String>> {
+        return listParamIndexBiotic
+    }
 
     fun addIndexBiotic(indexBiotic: IndexBiotic) {
         _isLoading.value = true

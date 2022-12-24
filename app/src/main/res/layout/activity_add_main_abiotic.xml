@@ -28,56 +28,114 @@
                 android:paddingRight="32dp"
                 android:paddingBottom="16dp">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_add_main_param"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+                    android:layout_marginBottom="16dp">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_add_main_param"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_add_main_param"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/parameter_name"
-                        android:inputType="none" />
+                        app:hintTextAppearance="@style/Text.Regular.UserLabel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/dropdown_add_main_param"
+                            android:layout_width="276dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/parameter_name"
+                            android:inputType="none" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_add_main_zone"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_add_parameter_main_abiotic"
+                        style="?attr/materialIconButtonFilledTonalStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+                    android:layout_marginBottom="16dp">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_add_main_zone"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_add_main_zone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="@string/geographical_zone"
-                        android:inputType="none" />
+                        app:hintTextAppearance="@style/Text.Regular.UserLabel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/dropdown_add_main_zone"
+                            android:layout_width="276dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/geographical_zone"
+                            android:inputType="none" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_add_main_water"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_add_parameter_geographical_zone"
+                        style="?attr/materialIconButtonFilledTonalStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    app:hintTextAppearance="@style/Text.Regular.UserLabel">
+                    android:layout_marginBottom="16dp">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_add_main_water"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_add_main_water"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/type_of_water"
-                        android:inputType="none" />
+                        app:hintTextAppearance="@style/Text.Regular.UserLabel"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/dropdown_add_main_water"
+                            android:layout_width="276dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/type_of_water"
+                            android:inputType="none" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_add_parameter_type_of_water"
+                        style="?attr/materialIconButtonFilledTonalStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:icon="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_add_main_initial"

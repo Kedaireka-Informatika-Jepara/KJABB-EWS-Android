@@ -1,5 +1,6 @@
 package rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.mainabiotic.add
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityAddMainAbioticBinding
 import rekayasaagromarin.ews3swj.model.MainAbiotic
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment
+import rekayasaagromarin.ews3swj.ui.parameter.AddParameterActivity
 
 class AddMainAbioticActivity : AppCompatActivity() {
 
@@ -42,12 +44,44 @@ class AddMainAbioticActivity : AppCompatActivity() {
         }
     }
 
+//    private fun initParameterName() {
+//        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+//            baseContext,
+//            R.array.main_abiotic_param,
+//            R.layout.item_text,
+//        )
+//        (binding.tilAddMainParam.editText as? AutoCompleteTextView)?.setAdapter(
+//            spinnerArrayAdapter
+//        )
+//
+//        binding.dropdownAddMainParam.onItemClickListener =
+//            AdapterView.OnItemClickListener { parent, _, position, _ ->
+//                parameterName = parent?.getItemAtPosition(position).toString()
+//            }
+//    }
+
     private fun initParameterName() {
-        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+        val listParameter = arrayListOf<String>()
+        with(addMainAbioticViewModel){
+            setParamMainAbiotic()
+            getParamMainAbiotic().observe(this@AddMainAbioticActivity){ list ->
+                listParameter.clear()
+                listParameter.addAll(list)
+            }
+        }
+
+//        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+//            baseContext,
+//            R.array.main_abiotic_param,
+//            R.layout.item_text,
+//        )
+
+        val spinnerArrayAdapter = ArrayAdapter(
             baseContext,
-            R.array.main_abiotic_param,
             R.layout.item_text,
+            listParameter
         )
+
         (binding.tilAddMainParam.editText as? AutoCompleteTextView)?.setAdapter(
             spinnerArrayAdapter
         )
@@ -110,8 +144,38 @@ class AddMainAbioticActivity : AppCompatActivity() {
     }
 
     private fun actionButton() {
+        addParameterMainAbiotic()
+        addParameterGeographicalZone()
+        addParameterTypeOfWater()
         addMainAbiotic()
         backButton()
+    }
+
+    private fun addParameterMainAbiotic() {
+        binding.btnAddParameterMainAbiotic.setOnClickListener {
+            intent = Intent(this, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 2)
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun addParameterGeographicalZone() {
+        binding.btnAddParameterGeographicalZone.setOnClickListener {
+            intent = Intent(this, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 3)
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun addParameterTypeOfWater() {
+        binding.btnAddParameterTypeOfWater.setOnClickListener {
+            intent = Intent(this, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 4)
+            }
+            startActivity(intent)
+        }
     }
 
     private fun addMainAbiotic() {

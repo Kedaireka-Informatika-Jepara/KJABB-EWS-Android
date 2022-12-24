@@ -7,5 +7,5 @@ data class GeographicalZone(
     val id: Int = 0,
 
     @field:SerializedName("zone")
-    val name: String = "",
+    val zone: String = "",
 )

@@ -16,7 +16,7 @@ data class Species(
     val species: String = "",
 
     @field:SerializedName("abundance")
-    val abundance: Double = 0.00,
+    val abundance: Int = 0,
 
     @field:SerializedName("taxa_indicator")
     val taxaIndicator: Double = 0.00,

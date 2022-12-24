@@ -1,5 +1,6 @@
 package rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.additionalabiotic.add
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityAddAdditionalAbioticBinding
 import rekayasaagromarin.ews3swj.model.AdditionalAbiotic
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment
+import rekayasaagromarin.ews3swj.ui.parameter.AddParameterActivity
 
 class AddAdditionalAbioticActivity : AppCompatActivity() {
 
@@ -39,11 +41,27 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
     }
 
     private fun initParameterName() {
-        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+        val listParameter = arrayListOf<String>()
+        with(addAdditionalAbioticViewModel){
+            setParamAdditionalAbiotic()
+            getParamAdditionalAbiotic().observe(this@AddAdditionalAbioticActivity) { list ->
+                listParameter.clear()
+                listParameter.addAll(list)
+            }
+        }
+
+//        val spinnerArrayAdapter = ArrayAdapter.createFromResource(
+//            baseContext,
+//            R.array.additional_abiotic_param,
+//            R.layout.item_text,
+//        )
+
+        val spinnerArrayAdapter = ArrayAdapter(
             baseContext,
-            R.array.additional_abiotic_param,
             R.layout.item_text,
+            listParameter
         )
+
         (binding.tilAddAdditionalParam.editText as? AutoCompleteTextView)?.setAdapter(
             spinnerArrayAdapter
         )
@@ -56,6 +74,7 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
 
     private fun actionButton() {
         addAdditionalAbiotic()
+        addParameterAdditionalAbiotic()
         backButton()
     }
 
@@ -150,6 +169,15 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
                     onBackPressed()
                 }
             }
+        }
+    }
+
+    private fun addParameterAdditionalAbiotic() {
+        binding.btnAddParameterAdditionalAbiotic.setOnClickListener {
+            intent = Intent(this, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 5)
+            }
+            startActivity(intent)
         }
     }
 
