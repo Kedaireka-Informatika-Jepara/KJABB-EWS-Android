@@ -77,9 +77,9 @@ class IndexBioticActionActivity : AppCompatActivity(), View.OnClickListener {
                 with(binding) {
                     tvIndexBioticId.text = indexBiotic.id.toString()
                     tvIndexBioticName.text = indexBiotic.name
-                    tvIndexBioticInitial.text = convertDecimal(indexBiotic.initialValue)
-                    tvIndexBioticFinal.text = convertDecimal(indexBiotic.finalValue)
-                    tvIndexBioticWeight.text = convertDecimal(indexBiotic.weight)
+                    tvIndexBioticInitial.text = indexBiotic.initialValue.toString()
+                    tvIndexBioticFinal.text = indexBiotic.finalValue.toString()
+                    tvIndexBioticWeight.text = indexBiotic.weight.toString()
                 }
             } else {
                 finish()

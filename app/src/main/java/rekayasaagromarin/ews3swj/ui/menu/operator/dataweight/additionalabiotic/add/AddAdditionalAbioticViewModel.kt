@@ -37,7 +37,7 @@ class AddAdditionalAbioticViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            if (it.type == 3){
+                            if (it.type == 5){
                                 paramAdditionalAbiotic.add(it.name)
                             }
                         }

@@ -85,9 +85,9 @@ class MainAbioticActionActivity : AppCompatActivity(), View.OnClickListener {
                     tvMainAbioticName.text = mainAbiotic.name
                     tvMainAbioticZone.text = mainAbiotic.geographicalZone
                     tvMainAbioticWater.text = mainAbiotic.typeOfWater
-                    tvMainAbioticInitial.text = convertDecimal(mainAbiotic.initialValue)
-                    tvMainAbioticFinal.text = convertDecimal(mainAbiotic.finalValue)
-                    tvMainAbioticWeight.text = convertDecimal(mainAbiotic.weight)
+                    tvMainAbioticInitial.text = mainAbiotic.initialValue.toString()
+                    tvMainAbioticFinal.text = mainAbiotic.finalValue.toString()
+                    tvMainAbioticWeight.text = mainAbiotic.weight.toString()
                 }
             } else {
                 finish()

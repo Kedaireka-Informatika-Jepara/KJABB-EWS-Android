@@ -16,6 +16,7 @@ import rekayasaagromarin.ews3swj.databinding.FragmentInputStationBinding
 import rekayasaagromarin.ews3swj.model.Station
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.menu.main.inputdata.inputmainparam.InputMainParamBioticActivity
+import rekayasaagromarin.ews3swj.ui.parameter.AddParameterActivity
 
 class InputStationFragment : Fragment() {
 
@@ -41,6 +42,7 @@ class InputStationFragment : Fragment() {
 
         binding.btnInputStationProceed.setOnClickListener { proceed() }
         nextInput()
+        actionButton()
     }
 
     override fun onStart() {
@@ -80,6 +82,29 @@ class InputStationFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+        }
+    }
+
+    private fun actionButton(){
+        addParameterGeographicalZone()
+        addParameterTypeOfWater()
+    }
+
+    private fun addParameterGeographicalZone() {
+        binding.btnAddParameterGeographicalZone.setOnClickListener {
+            val intent = Intent(activity, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 6)
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun addParameterTypeOfWater() {
+        binding.btnAddParameterTypeOfWater.setOnClickListener {
+            val intent = Intent(activity, AddParameterActivity::class.java).apply {
+                putExtra(AddParameterActivity.EXTRA_PARAMETER, 7)
+            }
+            startActivity(intent)
         }
     }
 
@@ -235,6 +260,7 @@ class InputStationFragment : Fragment() {
     companion object {
         const val EXTRA_STATION = "extra_station"
         var isFinish = false
+        var isUpdateItem = false
     }
 
 }

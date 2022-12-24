@@ -1,5 +1,6 @@
 package rekayasaagromarin.ews3swj.ui.parameter
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,14 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityAddParameterBinding
+import rekayasaagromarin.ews3swj.model.GeographicalZone
 import rekayasaagromarin.ews3swj.model.Parameter
+import rekayasaagromarin.ews3swj.model.TypeOfWater
+import rekayasaagromarin.ews3swj.ui.menu.main.inputdata.inputstation.InputStationFragment
+import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment
+import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.additionalabiotic.add.AddAdditionalAbioticActivity
+import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.indexbiotic.add.AddIndexBioticActivity
+import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.mainabiotic.add.AddMainAbioticActivity
 
 class AddParameterActivity : AppCompatActivity() {
 
@@ -36,6 +44,7 @@ class AddParameterActivity : AppCompatActivity() {
             title = getString(R.string.add_index_biotic)
             setNavigationOnClickListener {
                 onBackPressed()
+                finish()
             }
         }
     }
@@ -56,12 +65,29 @@ class AddParameterActivity : AppCompatActivity() {
                         Toast.makeText(this@AddParameterActivity, "Deskripsi parameter tidak boleh kosong", Toast.LENGTH_SHORT).show()
                     }
                     else -> {
-                        val parameter = Parameter(
-                            name = etAddParameterName.text.toString(),
-                            type = type,
-                            description = etAddParameterDescription.text.toString(),
-                        )
-                        addParameterViewModel.addParameter(parameter)
+                        val geoIndex = listOf(3,6)
+                        val waterIndex = listOf(4,7)
+                        if (geoIndex.contains(type)){
+                            Toast.makeText(this@AddParameterActivity, "geographical zone", Toast.LENGTH_SHORT).show()
+                            val geographicalZone = GeographicalZone(
+                                zone = etAddParameterName.text.toString()
+                            )
+                            addParameterViewModel.addGeographicalZone(geographicalZone)
+                        }else if (waterIndex.contains(type)){
+                            Toast.makeText(this@AddParameterActivity, "water index", Toast.LENGTH_SHORT).show()
+                            val typeOfWater = TypeOfWater(
+                                water = etAddParameterName.text.toString()
+                            )
+                            addParameterViewModel.addTypeOfWater(typeOfWater)
+                        }
+                        else{
+                            val parameter = Parameter(
+                                name = etAddParameterName.text.toString(),
+                                type = type,
+                                description = etAddParameterDescription.text.toString(),
+                            )
+                            addParameterViewModel.addParameter(parameter)
+                        }
                     }
                 }
             }
@@ -80,7 +106,37 @@ class AddParameterActivity : AppCompatActivity() {
 
             isSuccess.observe(this@AddParameterActivity) {
                 if (it == 200) {
-                    onBackPressed()
+//                    onBackPressed()
+                    when(type){
+                        1 -> {
+                            AddIndexBioticActivity.isUpdateItem = true
+                            finish()
+                        }
+                        2 -> {
+                            AddMainAbioticActivity.isUpdateItem = true
+                            finish()
+                        }
+                        3 -> { // geographical zone
+                            AddMainAbioticActivity.isUpdateItem = true
+                            finish()
+                        }
+                        4 -> { // type of water
+                            AddMainAbioticActivity.isUpdateItem = true
+                            finish()
+                        }
+                        5 -> {
+                            AddAdditionalAbioticActivity.isUpdateItem = true
+                            finish()
+                        }
+                        6 -> { // geographical zone
+                            InputStationFragment.isUpdateItem = true
+                            finish()
+                        }
+                        7 -> { // type of water
+                            InputStationFragment.isUpdateItem = true
+                            finish()
+                        }
+                    }
                 }
             }
         }
@@ -88,7 +144,8 @@ class AddParameterActivity : AppCompatActivity() {
 
     private fun backButton() {
         binding.btnAddParameterCancel.setOnClickListener {
-            onBackPressed()
+//            onBackPressed()
+            finish()
         }
     }
 

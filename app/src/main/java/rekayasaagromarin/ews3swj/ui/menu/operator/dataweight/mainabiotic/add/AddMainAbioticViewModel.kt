@@ -131,7 +131,7 @@ class AddMainAbioticViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            typeOfWater.add(it.name)
+                            typeOfWater.add(it.water)
                         }
                         listWater.postValue(typeOfWater)
                     }

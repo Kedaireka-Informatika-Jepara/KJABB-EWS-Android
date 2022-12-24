@@ -31,6 +31,15 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
         actionButton()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        if(isUpdateItem){
+            initParameterName()
+            isUpdateItem = false
+        }
+    }
+
     private fun initToolbar() {
         with(binding.actionAddAdditionalToolbar.viewToolbar) {
             title = getString(R.string.add_additional_abiotic)
@@ -193,5 +202,9 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
 
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object{
+        var isUpdateItem = false
     }
 }

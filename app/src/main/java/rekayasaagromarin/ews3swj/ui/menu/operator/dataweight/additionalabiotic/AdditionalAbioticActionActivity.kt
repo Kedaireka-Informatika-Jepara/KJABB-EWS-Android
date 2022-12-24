@@ -77,9 +77,9 @@ class AdditionalAbioticActionActivity : AppCompatActivity(), View.OnClickListene
                 with(binding) {
                     tvAdditionalAbioticId.text = additionalAbiotic.id.toString()
                     tvAdditionalAbioticName.text = additionalAbiotic.name
-                    tvAdditionalAbioticInitial.text = convertDecimal(additionalAbiotic.initialValue)
-                    tvAdditionalAbioticFinal.text = convertDecimal(additionalAbiotic.finalValue)
-                    tvAdditionalAbioticWeight.text = convertDecimal(additionalAbiotic.weight)
+                    tvAdditionalAbioticInitial.text = additionalAbiotic.initialValue.toString()
+                    tvAdditionalAbioticFinal.text = additionalAbiotic.finalValue.toString()
+                    tvAdditionalAbioticWeight.text = additionalAbiotic.weight.toString()
                 }
             } else {
                 finish()

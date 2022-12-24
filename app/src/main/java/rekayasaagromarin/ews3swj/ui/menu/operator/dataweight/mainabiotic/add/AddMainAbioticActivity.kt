@@ -35,6 +35,17 @@ class AddMainAbioticActivity : AppCompatActivity() {
         actionButton()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        if(isUpdateItem){
+            initParameterName()
+            initGeographicalZone()
+            initTypeOfWater()
+            isUpdateItem = false
+        }
+    }
+
     private fun initToolbar() {
         with(binding.actionAddMainToolbar.viewToolbar) {
             title = getString(R.string.add_main_abiotic)
@@ -302,5 +313,9 @@ class AddMainAbioticActivity : AppCompatActivity() {
 
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        var isUpdateItem = false
     }
 }

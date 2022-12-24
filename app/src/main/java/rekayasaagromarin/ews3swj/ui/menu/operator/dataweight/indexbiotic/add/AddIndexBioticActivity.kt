@@ -31,6 +31,15 @@ class AddIndexBioticActivity : AppCompatActivity() {
         actionButton()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        if(isUpdateItem){
+            initParameterName()
+            isUpdateItem = false
+        }
+    }
+
     private fun initToolbar() {
         with(binding.actionAddIndexToolbar.viewToolbar) {
             title = getString(R.string.add_index_biotic)
@@ -193,5 +202,9 @@ class AddIndexBioticActivity : AppCompatActivity() {
 
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        var isUpdateItem = false
     }
 }

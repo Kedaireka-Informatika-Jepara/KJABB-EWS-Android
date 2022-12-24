@@ -142,13 +142,26 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<List<MainAbiotic>>
 
+//    add geographical zone
+    @FormUrlEncoded
+    @POST("/api/v1/geographical_zone/add")
+    fun addGeographicalZone(
+        @Field("zone") zone: String
+    ): Call<ResponseApi>
+
     @GET("/api/v1/geographical_zone")
     fun getGeographicalZone(): Call<List<GeographicalZone>>
 
-    @GET("/api/v1/parameter")
-    fun getParameter(): Call<List<Parameter>>
+    @FormUrlEncoded
+    @POST("/api/v1/type_water/add")
+    fun addTypeWater(
+        @Field("water") water: String
+    ): Call<ResponseApi>
 
-//    add parameter
+    @GET("/api/v1/type_water")
+    fun getTypeOfWater(): Call<List<TypeOfWater>>
+
+    //    add parameter
     @FormUrlEncoded
     @POST("/api/v1/parameter/add")
     fun addParameter(
@@ -157,8 +170,8 @@ interface ApiService {
         @Field("description") description: String
     ): Call<ResponseApi>
 
-    @GET("/api/v1/type_water")
-    fun getTypeOfWater(): Call<List<TypeOfWater>>
+    @GET("/api/v1/parameter")
+    fun getParameter(): Call<List<Parameter>>
 
     @FormUrlEncoded
     @POST("/api/v1/main_abiotic/add")
