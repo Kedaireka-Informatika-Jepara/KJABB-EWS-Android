@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "972880362998",
+    "project_id": "ews-3swj",
+    "storage_bucket": "ews-3swj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972880362998:android:c977ab54d194afc98d5bd7",
+        "android_client_info": {
+          "package_name": "rekayasaagromarin.ews3swj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972880362998-njpepnvuprjhmgh1upgjg47fap3ef8bk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv9SLWCoEaxxPqxMM2ItY3_pAiKkP7Dhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972880362998-njpepnvuprjhmgh1upgjg47fap3ef8bk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

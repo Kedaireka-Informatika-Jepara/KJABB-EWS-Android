@@ -43,7 +43,6 @@ class AdditionalAbioticActionActivity : AppCompatActivity(), View.OnClickListene
         }
     }
 
-
     private fun actionButton() {
         with(binding) {
             btnAdditionalAbioticEdit.setOnClickListener(this@AdditionalAbioticActionActivity)

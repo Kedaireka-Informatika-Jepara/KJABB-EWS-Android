@@ -24,6 +24,7 @@ import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityMainBinding
 import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.auth.AuthActivity
+import rekayasaagromarin.ews3swj.ui.notifications.NotificationsActivity
 import rekayasaagromarin.ews3swj.ui.profile.ProfileActivity
 import kotlin.properties.Delegates
 
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
     private var role: Int = 0
+    private var userId: Int = 0
 
     private val mainViewModel: MainViewModel by viewModels()
     private val preferences: PreferencesManager by lazy { PreferencesManager(applicationContext) }
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.setUser(intent.getIntExtra(EXTRA_ID, 0))
         mainViewModel.getUser().observe(this) { user ->
+            userId = user.userId
             val url = "${BASE_URL}api/v1/images/profile/${user.image}"
             Glide.with(this)
                 .load(url)
@@ -136,6 +139,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.menu_notifications -> {
+                Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show()
+                val intentNotifications = Intent(this, NotificationsActivity::class.java).apply {
+                    putExtra(EXTRA_ID, userId)
+                }
+                startActivity(intentNotifications)
+            }
+
+            R.id.menu_profile -> {
+                val intentProfile = Intent(this, ProfileActivity::class.java)
+                startActivity(intentProfile)
+            }
+
             R.id.menu_logout -> {
                 preferences.removeData()
 
@@ -144,11 +160,6 @@ class MainActivity : AppCompatActivity() {
                 val intentLogin = Intent(this, AuthActivity::class.java)
                 startActivity(intentLogin)
                 finish()
-            }
-
-            R.id.menu_profile -> {
-                val intentProfile = Intent(this, ProfileActivity::class.java)
-                startActivity(intentProfile)
             }
         }
         return super.onOptionsItemSelected(item)

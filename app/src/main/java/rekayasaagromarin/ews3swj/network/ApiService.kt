@@ -42,6 +42,9 @@ interface ApiService {
     @GET("/api/v1/data_user")
     fun getListDataUser(): Call<List<User>>
 
+    @GET("/api/v1/notification")
+    fun getListNotification(): Call<List<Notification>>
+
     @GET("/api/v1/user/delete/{id}")
     fun deleteUser(
         @Path("id") id: Int

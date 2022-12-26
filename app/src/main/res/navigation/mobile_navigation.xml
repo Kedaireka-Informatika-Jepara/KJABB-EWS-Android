@@ -47,4 +47,10 @@
         android:label="@string/menu_input_history"
         tools:layout="@layout/fragment_input_history" />
 
+    <fragment
+        android:id="@+id/nav_tutorial"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.main.tutorial.TutorialFragment"
+        android:label="Tutorial"
+        tools:layout="@layout/fragment_tutorial"/>
+
 </navigation>
