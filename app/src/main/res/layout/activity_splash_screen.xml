@@ -12,12 +12,12 @@
         style="@style/Text.Bold"
         android:textSize="40sp"
         android:drawablePadding="10dp"
-        android:text="@string/app_name"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/black"
         android:scaleY="0.7"
         android:scaleX="0.7"
-        app:drawableTopCompat="@drawable/ic_app" />
+        app:drawableTopCompat="@drawable/logo" />
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/spin_kit"

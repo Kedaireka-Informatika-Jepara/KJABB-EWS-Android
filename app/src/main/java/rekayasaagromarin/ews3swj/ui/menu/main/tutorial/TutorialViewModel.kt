@@ -26,10 +26,13 @@ class TutorialViewModel : ViewModel() {
     }
 
     fun setListUrl(){
-        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/example.mp4?alt=media&token=d27ceea0-48b2-405e-84d6-babf86561371")
-        listUrl.add("https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1")
-        listUrl.add("https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1")
-        listUrl.add("https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
+        listUrl.add("https://firebasestorage.googleapis.com/v0/b/ews-3swj.appspot.com/o/tutorial%20mobile.mp4?alt=media&token=697bf9fe-afe5-426e-80c7-d6caa89489ad")
     }
 
     fun getUrl(index: Int): String{

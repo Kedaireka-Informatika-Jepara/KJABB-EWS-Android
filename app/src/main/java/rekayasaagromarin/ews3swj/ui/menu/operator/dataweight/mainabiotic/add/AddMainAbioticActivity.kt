@@ -165,7 +165,7 @@ class AddMainAbioticActivity : AppCompatActivity() {
     private fun addParameterMainAbiotic() {
         binding.btnAddParameterMainAbiotic.setOnClickListener {
             intent = Intent(this, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 2)
+                putExtra(AddParameterActivity.EXTRA_TYPE, 2)
             }
             startActivity(intent)
         }
@@ -174,7 +174,7 @@ class AddMainAbioticActivity : AppCompatActivity() {
     private fun addParameterGeographicalZone() {
         binding.btnAddParameterGeographicalZone.setOnClickListener {
             intent = Intent(this, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 3)
+                putExtra(AddParameterActivity.EXTRA_TYPE, 4)
             }
             startActivity(intent)
         }
@@ -183,7 +183,7 @@ class AddMainAbioticActivity : AppCompatActivity() {
     private fun addParameterTypeOfWater() {
         binding.btnAddParameterTypeOfWater.setOnClickListener {
             intent = Intent(this, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 4)
+                putExtra(AddParameterActivity.EXTRA_TYPE, 3)
             }
             startActivity(intent)
         }

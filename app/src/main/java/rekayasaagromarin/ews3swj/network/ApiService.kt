@@ -45,8 +45,33 @@ interface ApiService {
     @GET("/api/v1/notification")
     fun getListNotification(): Call<List<Notification>>
 
+    @FormUrlEncoded
+    @POST("/api/v1/notification/add")
+    fun sendNotification(
+        @Field("sender_id") senderId: Int,
+        @Field("receiver_id") receiverId: Int,
+        @Field("title") title: String,
+        @Field("message") message: String,
+        @Field("date_created") dateCreated: String,
+        @Field("is_read") isRead: Int
+    ): Call<ResponseApi>
+
     @GET("/api/v1/user/delete/{id}")
     fun deleteUser(
+        @Path("id") id: Int
+    ): Call<ResponseApi>
+
+    @FormUrlEncoded
+    @POST("/api/v1/parameter/edit/{id}")
+    fun editParameter(
+        @Path("id") id: Int,
+        @Field("name") name: String,
+        @Field("type") type: Int,
+        @Field("description") description: String
+    ): Call<ResponseApi>
+
+    @GET("/api/v1/parameter/delete/{id}")
+    fun deleteParameter(
         @Path("id") id: Int
     ): Call<ResponseApi>
 

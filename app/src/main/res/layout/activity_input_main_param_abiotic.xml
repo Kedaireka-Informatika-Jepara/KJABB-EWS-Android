@@ -31,11 +31,24 @@
                 android:paddingBottom="16dp">
 
                 <TextView
-                    style="@style/Text.Bold"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/abiotic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:textColor="@color/royal_blue"
-                    android:textSize="18sp" />
+                    android:textSize="24sp"
+                    style="@style/Text.Bold"
+                    android:text="STEP 2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/royal_blue"
+                    android:textSize="18sp"
+                    android:layout_marginVertical="8dp"
+                    style="@style/Text.Bold"
+                    android:text="Input Parameter Utama (Abiotik)"/>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_input_main_temperature"
@@ -43,6 +56,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi ukuran suhu/temperatur abiotik dalam satuan 0-100 °C. Contoh: 37°C [nilai desimal dipisahkan dengan titik]"
                     android:hint="@string/temperature"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
@@ -50,6 +65,7 @@
                         android:id="@+id/edt_input_main_temperature"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -61,10 +77,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/salinity"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi ukuran jumlah kandungan garam yang terdapat dalam satuan massa larutan dalam satuan ppt (part per thousand). Contoh: Salinitas air laut = 35 ppt"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_main_salinity"
+                        android:textColor="@color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal" />
@@ -78,12 +97,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/do_mg_l"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi  nilai oksigen terlarut dalam satuan mg/L.[nilai desimal dipisahkan dengan titik]"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_main_do"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -95,12 +117,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/ph"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi nilai tingkat keasaman/kebasaan suatu larutan pada rentang 0-14 pH."
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_main_ph"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>

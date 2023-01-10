@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import rekayasaagromarin.ews3swj.model.GeographicalZone
+import rekayasaagromarin.ews3swj.model.Parameter
 import rekayasaagromarin.ews3swj.model.ResponseApi
 import rekayasaagromarin.ews3swj.model.TypeOfWater
 import rekayasaagromarin.ews3swj.network.ApiConfig
@@ -28,16 +29,43 @@ class InputStationViewModel : ViewModel() {
     private val _isAvailableStationId = MutableLiveData<ResponseApi>()
     val isAvailableStationId: LiveData<ResponseApi> = _isAvailableStationId
 
-
     fun setGeographicalZone() {
         _isLoading.value = true
         _isError.value = false
         val geographicalZone = ArrayList<String>()
-        val client = ApiConfig.getApiService().getGeographicalZone()
-        client.enqueue(object : Callback<List<GeographicalZone>> {
+//        val client = ApiConfig.getApiService().getGeographicalZone()
+//        client.enqueue(object : Callback<List<GeographicalZone>> {
+//            override fun onResponse(
+//                call: Call<List<GeographicalZone>>,
+//                response: Response<List<GeographicalZone>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    _isLoading.value = false
+//                    _isError.value = false
+//                    val roleList = response.body()
+//                    if (roleList != null) {
+//                        roleList.forEach {
+//                            geographicalZone.add(it.zone)
+//                        }
+//                        geographicalZone.removeLast()
+//                        listGeoZone.postValue(geographicalZone)
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<GeographicalZone>>, t: Throwable) {
+//                _message.value = t.message
+//                _isLoading.value = false
+//                _isError.value = true
+//            }
+//
+//        })
+
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
             override fun onResponse(
-                call: Call<List<GeographicalZone>>,
-                response: Response<List<GeographicalZone>>
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
             ) {
                 if (response.isSuccessful) {
                     _isLoading.value = false
@@ -45,15 +73,16 @@ class InputStationViewModel : ViewModel() {
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            geographicalZone.add(it.zone)
+                            if (it.type == 4) {
+                                geographicalZone.add(it.name)
+                            }
                         }
-                        geographicalZone.removeLast()
                         listGeoZone.postValue(geographicalZone)
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<GeographicalZone>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
                 _message.value = t.message
                 _isLoading.value = false
                 _isError.value = true
@@ -69,28 +98,56 @@ class InputStationViewModel : ViewModel() {
     fun setTypeOfWater() {
         _isLoading.value = true
         val typeOfWater = ArrayList<String>()
-        val client = ApiConfig.getApiService().getTypeOfWater()
-        client.enqueue(object : Callback<List<TypeOfWater>> {
+//        val client = ApiConfig.getApiService().getTypeOfWater()
+//        client.enqueue(object : Callback<List<TypeOfWater>> {
+//            override fun onResponse(
+//                call: Call<List<TypeOfWater>>,
+//                response: Response<List<TypeOfWater>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    _isLoading.value = false
+//                    val roleList = response.body()
+//                    if (roleList != null) {
+//                        roleList.forEach {
+//                            typeOfWater.add(it.water)
+//                        }
+//                        typeOfWater.removeLast()
+//                        listWater.postValue(typeOfWater)
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<TypeOfWater>>, t: Throwable) {
+//                _message.value = t.message
+//                _isLoading.value = false
+//            }
+//
+//        })
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
             override fun onResponse(
-                call: Call<List<TypeOfWater>>,
-                response: Response<List<TypeOfWater>>
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
             ) {
                 if (response.isSuccessful) {
                     _isLoading.value = false
+                    _isError.value = false
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            typeOfWater.add(it.water)
+                            if (it.type == 3) {
+                                typeOfWater.add(it.name)
+                            }
                         }
-                        typeOfWater.removeLast()
                         listWater.postValue(typeOfWater)
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<TypeOfWater>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
                 _message.value = t.message
                 _isLoading.value = false
+                _isError.value = true
             }
 
         })

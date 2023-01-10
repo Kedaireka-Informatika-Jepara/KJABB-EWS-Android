@@ -1,18 +1,15 @@
 package rekayasaagromarin.ews3swj.ui.parameter
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import rekayasaagromarin.ews3swj.R
 import rekayasaagromarin.ews3swj.databinding.ActivityAddParameterBinding
 import rekayasaagromarin.ews3swj.model.GeographicalZone
 import rekayasaagromarin.ews3swj.model.Parameter
 import rekayasaagromarin.ews3swj.model.TypeOfWater
 import rekayasaagromarin.ews3swj.ui.menu.main.inputdata.inputstation.InputStationFragment
-import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.additionalabiotic.add.AddAdditionalAbioticActivity
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.indexbiotic.add.AddIndexBioticActivity
 import rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.mainabiotic.add.AddMainAbioticActivity
@@ -31,9 +28,34 @@ class AddParameterActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.actionAddParameterToolbar.viewToolbar)
 
-        type = intent.getIntExtra(EXTRA_PARAMETER, 0)
+        type = intent.getIntExtra(EXTRA_TYPE, 0)
 
-        binding.tvCekIntent.text = type.toString()
+        when(type) {
+            0 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter"
+            }
+            1 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Indeks Biotik"
+            }
+            2 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Indeks Abiotik Utama"
+            }
+            3 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Tipe Air"
+            }
+            4 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Zona Geografis"
+            }
+            5 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Indeks Abiotik Tambahan"
+            }
+            6 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Tipe Air"
+            }
+            7 -> {
+                binding.tvAddParameterTitle.text = "Tambah Parameter Zona Geografis"
+            }
+        }
 
         initToolbar()
         actionButton()
@@ -41,7 +63,6 @@ class AddParameterActivity : AppCompatActivity() {
 
     private fun initToolbar() {
         with(binding.actionAddParameterToolbar.viewToolbar) {
-            title = getString(R.string.add_index_biotic)
             setNavigationOnClickListener {
                 onBackPressed()
                 finish()
@@ -65,29 +86,41 @@ class AddParameterActivity : AppCompatActivity() {
                         Toast.makeText(this@AddParameterActivity, "Deskripsi parameter tidak boleh kosong", Toast.LENGTH_SHORT).show()
                     }
                     else -> {
-                        val geoIndex = listOf(3,6)
-                        val waterIndex = listOf(4,7)
-                        if (geoIndex.contains(type)){
-                            Toast.makeText(this@AddParameterActivity, "geographical zone", Toast.LENGTH_SHORT).show()
-                            val geographicalZone = GeographicalZone(
-                                zone = etAddParameterName.text.toString()
-                            )
-                            addParameterViewModel.addGeographicalZone(geographicalZone)
-                        }else if (waterIndex.contains(type)){
-                            Toast.makeText(this@AddParameterActivity, "water index", Toast.LENGTH_SHORT).show()
-                            val typeOfWater = TypeOfWater(
-                                water = etAddParameterName.text.toString()
-                            )
-                            addParameterViewModel.addTypeOfWater(typeOfWater)
+                        if (type == 6){
+                            type = 3
                         }
-                        else{
-                            val parameter = Parameter(
-                                name = etAddParameterName.text.toString(),
-                                type = type,
-                                description = etAddParameterDescription.text.toString(),
-                            )
-                            addParameterViewModel.addParameter(parameter)
+                        if (type == 7){
+                            type = 4
                         }
+                        val parameter = Parameter(
+                            name = etAddParameterName.text.toString(),
+                            type = type,
+                            description = etAddParameterDescription.text.toString(),
+                        )
+                        addParameterViewModel.addParameter(parameter)
+//                        val geoIndex = listOf(3,6)
+//                        val waterIndex = listOf(4,7)
+//                        if (geoIndex.contains(type)){
+//                            Toast.makeText(this@AddParameterActivity, "geographical zone", Toast.LENGTH_SHORT).show()
+//                            val geographicalZone = GeographicalZone(
+//                                zone = etAddParameterName.text.toString()
+//                            )
+//                            addParameterViewModel.addGeographicalZone(geographicalZone)
+//                        }else if (waterIndex.contains(type)){
+//                            Toast.makeText(this@AddParameterActivity, "water index", Toast.LENGTH_SHORT).show()
+//                            val typeOfWater = TypeOfWater(
+//                                water = etAddParameterName.text.toString()
+//                            )
+//                            addParameterViewModel.addTypeOfWater(typeOfWater)
+//                        }
+//                        else{
+//                            val parameter = Parameter(
+//                                name = etAddParameterName.text.toString(),
+//                                type = type,
+//                                description = etAddParameterDescription.text.toString(),
+//                            )
+//                            addParameterViewModel.addParameter(parameter)
+//                        }
                     }
                 }
             }
@@ -136,6 +169,9 @@ class AddParameterActivity : AppCompatActivity() {
                             InputStationFragment.isUpdateItem = true
                             finish()
                         }
+                        8 -> { // parameter
+                            finish()
+                        }
                     }
                 }
             }
@@ -158,6 +194,6 @@ class AddParameterActivity : AppCompatActivity() {
     }
 
     companion object{
-        const val EXTRA_PARAMETER = "extra_parameter"
+        const val EXTRA_TYPE = "extra_type"
     }
 }

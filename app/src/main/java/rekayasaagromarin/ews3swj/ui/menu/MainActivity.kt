@@ -14,10 +14,7 @@ import androidx.navigation.findNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.navGraphViewModels
 import androidx.navigation.ui.*
 import com.bumptech.glide.Glide
 import rekayasaagromarin.ews3swj.R
@@ -26,7 +23,6 @@ import rekayasaagromarin.ews3swj.preferences.PreferencesManager
 import rekayasaagromarin.ews3swj.ui.auth.AuthActivity
 import rekayasaagromarin.ews3swj.ui.notifications.NotificationsActivity
 import rekayasaagromarin.ews3swj.ui.profile.ProfileActivity
-import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
-    private var role: Int = 0
+    private var role: Int? = 0
     private var userId: Int = 0
 
     private val mainViewModel: MainViewModel by viewModels()
@@ -55,7 +51,8 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarHome.toolbar)
 
-        role = intent.getIntExtra(EXTRA_ROLE, 0);
+//        role = intent.getIntExtra(EXTRA_ROLE, 0);
+        role = preferences.getRole()
         Toast.makeText(this, "MainActivity role id : $role", Toast.LENGTH_SHORT).show()
 
         initNavDrawer()
@@ -108,9 +105,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_data_user, R.id.nav_data_payment,
-            R.id.nav_data_weight, R.id.nav_data_family_biotic, R.id.nav_data_station,
-            R.id.nav_input_data, R.id.nav_input_history
+            R.id.nav_data_user, R.id.nav_data_payment, R.id.nav_input_notification,
+            R.id.nav_data_weight, R.id.nav_data_family_biotic, R.id.nav_data_station, R.id.nav_parameter,
+            R.id.nav_input_data, R.id.nav_input_history, R.id.nav_tutorial
         ), drawerLayout)
 
         when (role) {
@@ -179,8 +176,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val BASE_URL = "http://10.101.3.72:3308/"
-//        const val BASE_URL = "http://mews2.cemebsa.com/"
+//        const val BASE_URL = "http://10.101.2.64:3308/"
+        const val BASE_URL = "http://mews2.cemebsa.com/"
         const val EXTRA_ID = "extra id"
         const val EXTRA_NAME = "extra name"
         const val EXTRA_EMAIL = "extra email"

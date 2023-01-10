@@ -13,12 +13,17 @@
                 android:id="@+id/nav_data_user"
                 android:checkable="true"
                 android:icon="@drawable/ic_users"
-                android:title="@string/menu_data_user" />
+                android:title="Data Pengguna" />
             <item
                 android:id="@+id/nav_data_payment"
                 android:checkable="true"
                 android:icon="@drawable/ic_payment"
-                android:title="@string/menu_data_payment" />
+                android:title="Data Pembayaran" />
+            <item
+                android:id="@+id/nav_input_notification"
+                android:checkable="true"
+                android:icon="@drawable/ic_notification_add"
+                android:title="Kirim Notifikasi" />
         </menu>
     </item>
 
@@ -30,17 +35,22 @@
                 android:id="@+id/nav_data_weight"
                 android:checkable="true"
                 android:icon="@drawable/ic_weight"
-                android:title="@string/menu_data_weight" />
+                android:title="Data Bobot" />
             <item
                 android:id="@+id/nav_data_family_biotic"
                 android:checkable="true"
                 android:icon="@drawable/ic_family_biotik"
-                android:title="@string/menu_data_family_biotic" />
+                android:title="Data Keluarga Biotik" />
             <item
                 android:id="@+id/nav_data_station"
                 android:checkable="true"
                 android:icon="@drawable/ic_place"
-                android:title="@string/menu_data_station" />
+                android:title="Data Lingkungan" />
+            <item
+                android:id="@+id/nav_parameter"
+                android:checkable="true"
+                android:icon="@drawable/ic_parameter"
+                android:title="Parameter" />
         </menu>
     </item>
 
@@ -57,7 +67,7 @@
                 android:id="@+id/nav_input_history"
                 android:checkable="true"
                 android:icon="@drawable/ic_history"
-                android:title="@string/menu_input_history" />
+                android:title="Histori Pengisian" />
             <item
                 android:id="@+id/nav_tutorial"
                 android:checkable="true"

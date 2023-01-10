@@ -7,136 +7,124 @@
     android:orientation="vertical"
     tools:context=".ui.menu.main.inputdata.inputstation.InputStationFragment">
 
-    <FrameLayout
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rv_parameter"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+
+    <LinearLayout
+        android:id="@+id/layout_input_station"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp">
 
-        <LinearLayout
-            android:id="@+id/layout_input_station"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingLeft="32dp"
-            android:paddingTop="16dp"
-            android:paddingRight="32dp"
-            android:paddingBottom="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/royal_blue"
+            android:textSize="24sp"
+            style="@style/Text.Bold"
+            android:text="STEP 1"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_input_station_zone"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextAppearance="@style/Text.Regular.UserLabel"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_input_station_zone"
-                        android:layout_width="276dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/geographical_zone"
-                        android:inputType="none" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/btn_add_parameter_geographical_zone"
-                    style="?attr/materialIconButtonFilledTonalStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_add"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/til_input_station_water"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:hintTextAppearance="@style/Text.Regular.UserLabel"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/dropdown_input_station_water"
-                        android:layout_width="276dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/type_of_water"
-                        android:inputType="none" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/btn_add_parameter_type_of_water"
-                    style="?attr/materialIconButtonFilledTonalStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:icon="@drawable/ic_add"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/royal_blue"
+            android:textSize="18sp"
+            android:layout_marginVertical="8dp"
+            style="@style/Text.Bold"
+            android:text="Input Station"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_input_station_id"
-                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:id="@+id/til_input_station_zone"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:hint="@string/station_id"
-                app:hintTextAppearance="@style/Text.Regular.UserLabel">
+                android:layout_marginTop="8dp"
+                app:hintTextAppearance="@style/Text.Regular.UserLabel"
+                app:helperText="Pilihlah salah satu diantara zona geografis yang ada."
+                app:helperTextTextColor="@color/gray">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_input_station_id"
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_input_station_zone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:hint="@string/geographical_zone"
+                    android:textColor="@color/black"
+                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/btn_input_station_proceed"
-                style="@style/Button.Action"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_input_station_water"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/caribbean_green"
-                android:text="@string/proceed" />
+                android:layout_marginTop="8dp"
+                app:helperText="Pilihlah salah satu diantara tipe air yang ada."
+                app:helperTextTextColor="@color/gray"
+                app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
-        </LinearLayout>
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_input_station_water"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/type_of_water"
+                    android:textColor="@color/black"
+                    android:inputType="none" />
 
-        <include
-            android:id="@+id/loading_input_station"
-            layout="@layout/view_loading"
-            android:visibility="gone" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tv_station_error"
-            style="@style/Text.Regular"
-            android:layout_gravity="center"
-            android:text="@string/something_went_wrong"
-            android:textSize="18sp"
-            android:visibility="gone"
-            app:drawableTopCompat="@drawable/ic_error" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_input_station_id"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/station_id"
+            app:helperText="Masukkan Station ID yang unik."
+            app:helperTextTextColor="@color/gray"
+            app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
-    </FrameLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_input_station_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_input_station_proceed"
+            style="@style/Button.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/caribbean_green"
+            android:text="@string/proceed" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/loading_input_station"
+        layout="@layout/view_loading"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_station_error"
+        style="@style/Text.Regular"
+        android:layout_gravity="center"
+        android:text="@string/something_went_wrong"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:drawableTopCompat="@drawable/ic_error" />
 
 </LinearLayout>
 

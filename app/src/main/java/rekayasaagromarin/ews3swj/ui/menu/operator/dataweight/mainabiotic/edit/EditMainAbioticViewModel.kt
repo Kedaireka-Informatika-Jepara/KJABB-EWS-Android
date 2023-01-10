@@ -3,10 +3,7 @@ package rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.mainabiotic.edit
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import rekayasaagromarin.ews3swj.model.GeographicalZone
-import rekayasaagromarin.ews3swj.model.MainAbiotic
-import rekayasaagromarin.ews3swj.model.ResponseApi
-import rekayasaagromarin.ews3swj.model.TypeOfWater
+import rekayasaagromarin.ews3swj.model.*
 import rekayasaagromarin.ews3swj.network.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,6 +21,9 @@ class EditMainAbioticViewModel : ViewModel() {
 
     private val _isSuccess = MutableLiveData<Int>()
     val isSuccess: LiveData<Int> = _isSuccess
+
+    private val _isError = MutableLiveData<Boolean>()
+    val isError: LiveData<Boolean> = _isError
 
     fun editMainAbiotic(mainAbiotic: MainAbiotic) {
         _isLoading.value = true
@@ -56,27 +56,56 @@ class EditMainAbioticViewModel : ViewModel() {
     fun setGeographicalZone() {
         _isLoading.value = true
         val geographicalZone = ArrayList<String>()
-        val client = ApiConfig.getApiService().getGeographicalZone()
-        client.enqueue(object : Callback<List<GeographicalZone>> {
+//        val client = ApiConfig.getApiService().getGeographicalZone()
+//        client.enqueue(object : Callback<List<GeographicalZone>> {
+//            override fun onResponse(
+//                call: Call<List<GeographicalZone>>,
+//                response: Response<List<GeographicalZone>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    _isLoading.value = false
+//                    val roleList = response.body()
+//                    if (roleList != null) {
+//                        roleList.forEach {
+//                            geographicalZone.add(it.zone)
+//                        }
+//                        listGeoZone.postValue(geographicalZone)
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<GeographicalZone>>, t: Throwable) {
+//                _message.value = t.message
+//                _isLoading.value = false
+//            }
+//
+//        })
+
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
             override fun onResponse(
-                call: Call<List<GeographicalZone>>,
-                response: Response<List<GeographicalZone>>
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
             ) {
                 if (response.isSuccessful) {
                     _isLoading.value = false
+                    _isError.value = false
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            geographicalZone.add(it.zone)
+                            if (it.type == 4) {
+                                geographicalZone.add(it.name)
+                            }
                         }
                         listGeoZone.postValue(geographicalZone)
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<GeographicalZone>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
                 _message.value = t.message
                 _isLoading.value = false
+                _isError.value = true
             }
 
         })
@@ -89,27 +118,56 @@ class EditMainAbioticViewModel : ViewModel() {
     fun setTypeOfWater() {
         _isLoading.value = true
         val typeOfWater = ArrayList<String>()
-        val client = ApiConfig.getApiService().getTypeOfWater()
-        client.enqueue(object : Callback<List<TypeOfWater>> {
+//        val client = ApiConfig.getApiService().getTypeOfWater()
+//        client.enqueue(object : Callback<List<TypeOfWater>> {
+//            override fun onResponse(
+//                call: Call<List<TypeOfWater>>,
+//                response: Response<List<TypeOfWater>>
+//            ) {
+//                if (response.isSuccessful) {
+//                    _isLoading.value = false
+//                    val roleList = response.body()
+//                    if (roleList != null) {
+//                        roleList.forEach {
+//                            typeOfWater.add(it.water)
+//                        }
+//                        listWater.postValue(typeOfWater)
+//                    }
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<List<TypeOfWater>>, t: Throwable) {
+//                _message.value = t.message
+//                _isLoading.value = false
+//            }
+//
+//        })
+
+        val client = ApiConfig.getApiService().getParameter()
+        client.enqueue(object : Callback<List<Parameter>> {
             override fun onResponse(
-                call: Call<List<TypeOfWater>>,
-                response: Response<List<TypeOfWater>>
+                call: Call<List<Parameter>>,
+                response: Response<List<Parameter>>
             ) {
                 if (response.isSuccessful) {
                     _isLoading.value = false
+                    _isError.value = false
                     val roleList = response.body()
                     if (roleList != null) {
                         roleList.forEach {
-                            typeOfWater.add(it.water)
+                            if (it.type == 3) {
+                                typeOfWater.add(it.name)
+                            }
                         }
                         listWater.postValue(typeOfWater)
                     }
                 }
             }
 
-            override fun onFailure(call: Call<List<TypeOfWater>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Parameter>>, t: Throwable) {
                 _message.value = t.message
                 _isLoading.value = false
+                _isError.value = true
             }
 
         })

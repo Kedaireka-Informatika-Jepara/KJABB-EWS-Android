@@ -184,7 +184,7 @@ class AddAdditionalAbioticActivity : AppCompatActivity() {
     private fun addParameterAdditionalAbiotic() {
         binding.btnAddParameterAdditionalAbiotic.setOnClickListener {
             intent = Intent(this, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 5)
+                putExtra(AddParameterActivity.EXTRA_TYPE, 5)
             }
             startActivity(intent)
         }

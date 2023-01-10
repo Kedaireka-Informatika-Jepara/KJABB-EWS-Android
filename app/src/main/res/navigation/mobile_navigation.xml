@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_data_payment" />
 
     <fragment
+        android:id="@+id/nav_input_notification"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.admin.inputnotification.InputNotificationFragment"
+        android:label="Input Notification"
+        tools:layout="@layout/fragment_input_notification"/>
+
+    <fragment
         android:id="@+id/nav_data_weight"
         android:name="rekayasaagromarin.ews3swj.ui.menu.operator.dataweight.DataWeightFragment"
         android:label="@string/menu_data_weight"
@@ -34,6 +40,12 @@
         android:name="rekayasaagromarin.ews3swj.ui.menu.operator.datastation.DataStationFragment"
         android:label="@string/menu_data_station"
         tools:layout="@layout/fragment_data_station" />
+
+    <fragment
+        android:id="@+id/nav_parameter"
+        android:name="rekayasaagromarin.ews3swj.ui.menu.main.parameter.ParameterFragment"
+        android:label="Parameter"
+        tools:layout="@layout/fragment_parameter" />
 
     <fragment
         android:id="@+id/nav_input_data"

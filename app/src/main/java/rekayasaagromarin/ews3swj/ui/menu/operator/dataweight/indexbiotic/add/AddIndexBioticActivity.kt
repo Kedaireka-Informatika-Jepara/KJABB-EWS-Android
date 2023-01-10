@@ -90,7 +90,7 @@ class AddIndexBioticActivity : AppCompatActivity() {
     private fun addParameterBiotic() {
         binding.btnAddParameterIndexBiotic.setOnClickListener {
             intent = Intent(this, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 1)
+                putExtra(AddParameterActivity.EXTRA_TYPE, 1)
             }
             startActivity(intent)
         }

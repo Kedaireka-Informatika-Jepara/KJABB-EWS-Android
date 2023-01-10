@@ -16,7 +16,7 @@
         <item name="colorSecondaryContainer">@color/tipe1</item>
         <item name="colorOnSecondaryContainer">@color/royal_blue</item>
         <item name="android:windowTranslucentStatus">true</item>
-<!--        <item name="colorSurface">@color/royal_blue</item>-->
+        <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/royal_blue</item>
     </style>
 
@@ -46,6 +46,7 @@
 
     <style name="Text.Regular.UserLabel">
         <item name="android:textSize">16sp</item>
+<!--        <item name="android:textColor">@color/black</item>-->
     </style>
 
     <style name="Text.SemiBold">

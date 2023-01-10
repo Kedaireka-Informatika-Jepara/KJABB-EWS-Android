@@ -31,11 +31,23 @@
                 android:paddingBottom="16dp">
 
                 <TextView
-                    style="@style/Text.Bold"
-                    android:layout_marginBottom="8dp"
-                    android:text="@string/biotic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:textColor="@color/royal_blue"
-                    android:textSize="18sp" />
+                    android:textSize="24sp"
+                    style="@style/Text.Bold"
+                    android:text="STEP 3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/royal_blue"
+                    android:textSize="18sp"
+                    android:layout_marginVertical="8dp"
+                    style="@style/Text.Bold"
+                    android:text="Input Parameter Tambahan (Biotik)"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_input_add_similarity"
@@ -44,12 +56,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/similarity"
+                    app:helperText="Berisi ukuran similaritas/kesamaan dari Index Biotik dalam satuan J (Jaccard). [nilai desimal dipisahkan dengan titik]"
+                    app:helperTextTextColor="@color/gray"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_add_similarity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -61,12 +76,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/dominance"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi ukuran dominansi atau sifat yang menutupisifat asli dari suatu Index Biotik dalam satuan C.[nilai desimal dipisahkan dengan titik]"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_add_dominance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -78,12 +96,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/diversity"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi ukuran indeks keanekaragaman dalam satuan H'.[nilai desimal dipisahkan dengan titik]"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_add_diversity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:inputType="numberDecimal" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -94,6 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="Berisi nilai abundance/kelimpahan dalam satuan 0-100 %. Contoh: Kelimpahan Kepiting Bakau = 22.5% [nilai desimal dipisahkan dengan titik]"
                     android:hint="@string/sum_abundance"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
@@ -102,6 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
+                        android:textColor="@color/black"
                         android:focusableInTouchMode="false"
                         android:inputType="none" />
 
@@ -114,12 +138,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/sum_species"
+                    app:helperTextTextColor="@color/gray"
+                    app:helperText="jumlah dari spesies"
                     app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_input_add_sum_species"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:focusable="false"
                         android:focusableInTouchMode="false"
                         android:inputType="none" />
@@ -140,6 +167,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="false"
+                        android:textColor="@color/black"
                         android:focusableInTouchMode="false"
                         android:inputType="none" />
 

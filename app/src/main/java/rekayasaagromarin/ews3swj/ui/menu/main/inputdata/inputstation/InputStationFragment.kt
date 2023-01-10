@@ -86,27 +86,27 @@ class InputStationFragment : Fragment() {
     }
 
     private fun actionButton(){
-        addParameterGeographicalZone()
-        addParameterTypeOfWater()
+//        addParameterGeographicalZone()
+//        addParameterTypeOfWater()
     }
 
-    private fun addParameterGeographicalZone() {
-        binding.btnAddParameterGeographicalZone.setOnClickListener {
-            val intent = Intent(activity, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 6)
-            }
-            startActivity(intent)
-        }
-    }
-
-    private fun addParameterTypeOfWater() {
-        binding.btnAddParameterTypeOfWater.setOnClickListener {
-            val intent = Intent(activity, AddParameterActivity::class.java).apply {
-                putExtra(AddParameterActivity.EXTRA_PARAMETER, 7)
-            }
-            startActivity(intent)
-        }
-    }
+//    private fun addParameterGeographicalZone() {
+//        binding.btnAddParameterGeographicalZone.setOnClickListener {
+//            val intent = Intent(activity, AddParameterActivity::class.java).apply {
+//                putExtra(AddParameterActivity.EXTRA_TYPE, 7)
+//            }
+//            startActivity(intent)
+//        }
+//    }
+//
+//    private fun addParameterTypeOfWater() {
+//        binding.btnAddParameterTypeOfWater.setOnClickListener {
+//            val intent = Intent(activity, AddParameterActivity::class.java).apply {
+//                putExtra(AddParameterActivity.EXTRA_TYPE, 6)
+//            }
+//            startActivity(intent)
+//        }
+//    }
 
     private fun initGeographicalZone() {
         val listZone = arrayListOf<String>()
@@ -148,7 +148,6 @@ class InputStationFragment : Fragment() {
                 showLoading(it)
             }
         }
-
     }
 
     private fun initTypeOfWater() {

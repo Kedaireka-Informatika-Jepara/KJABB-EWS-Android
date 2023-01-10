@@ -32,12 +32,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:hint="@string/species"
+                app:helperText="Berisi spesies/genus biotik. Contoh: Kepiting."
+                app:helperTextTextColor="@color/gray"
                 app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_input_main_species"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -48,6 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:helperTextTextColor="@color/gray"
+                app:helperText="Pilihlah salah satu diantara family yang ada."
                 app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
                 <AutoCompleteTextView
@@ -65,6 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                app:helperTextTextColor="@color/gray"
+                app:helperText="Berisi nilai abundance/kelimpahan dalam satuan 0-100 %. Contoh: Kelimpahan Kepiting Bakau = 22.5% [nilai desimal dipisahkan dengan titik]"
                 android:hint="@string/abundance"
                 app:hintTextAppearance="@style/Text.Regular.UserLabel">
 
@@ -72,6 +79,7 @@
                     android:id="@+id/edt_input_main_abundance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="numberDecimal" />
 
             </com.google.android.material.textfield.TextInputLayout>
